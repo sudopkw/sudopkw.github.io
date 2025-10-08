@@ -43,6 +43,30 @@ const previousPosition = {
   sectionItemIndex: 0,
 };
 
+// Minecraft loading screen tips
+const MINECRAFT_TIPS = [
+  "Also try Terraria!",
+  "Loading chunks...",
+  "Don't dig straight down!",
+  "Creepers are scared of cats",
+  "The cake is a lie",
+  "Press F3 to debug",
+  "Water stops fall damage",
+  "Beds explode in the Nether",
+  "Eat food to heal",
+  "Redstone can be complicated",
+  "Make a nether portal!",
+  "Enchant your gear",
+  "Mine diamonds with iron",
+  "Watch out for lava!",
+  "Make a crafting table",
+  "Villagers trade emeralds",
+  "Fish for treasure",
+  "Build a house before night",
+  "Skeletons hate shields",
+  "Endermen don't like water"
+];
+
 function clamp(min, value, max) {
   return Math.min(Math.max(min, value), max);
 }
@@ -51,13 +75,13 @@ function isMobile() {
   return window.innerWidth <= 768;
 }
 
-function setupBibleReloadButton(button) {
+function setupTipReloadButton(button) {
   if (button == null) {
     return;
   }
 
   button.addEventListener("click", async () => {
-    await displayRandomBibleVerse();
+    await displayRandomMinecraftTip();
   });
 
   button.addEventListener("mouseleave", () => {
@@ -71,74 +95,64 @@ function setupBibleReloadButton(button) {
   });
 }
 
-async function fetchRandomBibleVerse() {
-  const response = await fetch(
-    "https://labs.bible.org/api/?passage=random&type=json&callback=amen",
-  );
-  const jsonpResponse = await response.text();
-
-  const jsonStartIndex = jsonpResponse.indexOf("{");
-  const jsonEndIndex = jsonpResponse.lastIndexOf("}");
-  const jsonString = jsonpResponse.substring(jsonStartIndex, jsonEndIndex + 1);
-  const data = JSON.parse(jsonString);
-
-  return data;
+function getRandomMinecraftTip() {
+  return MINECRAFT_TIPS[Math.floor(Math.random() * MINECRAFT_TIPS.length)];
 }
 
-async function displayRandomBibleVerse(parentElement = null) {
+async function displayRandomMinecraftTip(parentElement = null) {
   try {
-    const bibleVerse =
-      document.getElementsByClassName("bible-verse")?.[0] ||
+    const tipElement =
+      document.getElementsByClassName("minecraft-tip")?.[0] ||
       document.createElement("div");
 
-    if (!bibleVerse.classList.contains("bible-verse")) {
-      bibleVerse.classList.add("bible-verse");
+    if (!tipElement.classList.contains("minecraft-tip")) {
+      tipElement.classList.add("minecraft-tip");
     }
 
-    const referenceElement = document.createElement("div");
-    referenceElement.classList.add("reference");
+    const reloadButton = document.createElement("button");
+    reloadButton.innerText = "🔁";
+    reloadButton.classList.add("tip-reload-button");
+    setupTipReloadButton(reloadButton);
 
     const textElement = document.createElement("div");
-    textElement.innerHTML = "Connecting to the Holy Ghost...";
+    textElement.innerHTML = "Loading tip...";
 
-    const reloadButton = document.createElement("button");
-    setupBibleReloadButton(reloadButton);
+    tipElement.innerHTML = "";
 
-    bibleVerse.innerHTML = "";
+    tipElement.appendChild(reloadButton);
+    tipElement.appendChild(textElement);
 
-    bibleVerse.appendChild(reloadButton);
-    bibleVerse.appendChild(textElement);
-    bibleVerse.appendChild(referenceElement);
+    parentElement?.appendChild(tipElement);
 
-    parentElement?.appendChild(bibleVerse);
-
-    const { text, bookname, chapter, verse } = await fetchRandomBibleVerse();
-    referenceElement.innerText = `${bookname} ${chapter}:${verse}`;
-    textElement.innerHTML = text
-      .replaceAll(
-        "Jesus",
-        `<span class="${getRandomTextColorClass()}">Jesus</span>`,
-      )
-      .replaceAll(
-        "Christ",
-        `<span class="${getRandomTextColorClass()}">Christ</span>`,
-      )
-      .replaceAll(
-        "Savior",
-        `<span class="${getRandomTextColorClass()}">Savior</span>`,
-      )
-      .replaceAll(
-        "Lord",
-        `<span class="${getRandomTextColorClass()}">Lord</span>`,
-      )
-      .replaceAll(
-        "God",
-        `<span class="${getRandomTextColorClass()}">God</span>`,
-      )
-      .replaceAll(
-        "Faith",
-        `<span class="${getRandomTextColorClass()}">Faith</span>`,
-      );
+    // Small delay for effect
+    setTimeout(() => {
+      const tip = getRandomMinecraftTip();
+      textElement.innerHTML = tip
+        .replaceAll(
+          "Terraria",
+          `<span class="${getRandomTextColorClass()}">Terraria</span>`,
+        )
+        .replaceAll(
+          "Creepers",
+          `<span class="${getRandomTextColorClass()}">Creepers</span>`,
+        )
+        .replaceAll(
+          "Nether",
+          `<span class="${getRandomTextColorClass()}">Nether</span>`,
+        )
+        .replaceAll(
+          "Endermen",
+          `<span class="${getRandomTextColorClass()}">Endermen</span>`,
+        )
+        .replaceAll(
+          "Diamonds",
+          `<span class="${getRandomTextColorClass()}">Diamonds</span>`,
+        )
+        .replaceAll(
+          "Redstone",
+          `<span class="${getRandomTextColorClass()}">Redstone</span>`,
+        );
+    }, 500);
   } catch (e) {
     console.error(e);
   }
@@ -387,7 +401,7 @@ async function displayContent() {
 
     colorizeCode();
   } else {
-    const logoFileName = `images/logo${Math.floor(Math.random() * 4) + 1}.svg`;
+    const logoFileName = `images/social-banner.jpg`;
     const logoContainer = document.createElement("div");
     logoContainer.id = "logo-container";
 
@@ -395,7 +409,7 @@ async function displayContent() {
     logoElement.loading = "eager";
     logoElement.src = logoFileName;
     logoElement.id = "logo";
-    logoElement.alt = "Wallenart";
+    logoElement.alt = "sudopkw";
 
     logoContainer.appendChild(logoElement);
 
@@ -417,7 +431,7 @@ async function displayContent() {
     outerContainerElement.appendChild(innerContainerElement);
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
 
-    await displayRandomBibleVerse(innerContainerElement);
+    await displayRandomMinecraftTip(innerContainerElement);
   }
 }
 
@@ -682,7 +696,7 @@ async function init() {
   initTouchListeners();
 
   await render(true, true);
-  await displayRandomBibleVerse();
+  await displayRandomMinecraftTip();
 }
 
 /** HIGHLIGHTING STUFF **/
