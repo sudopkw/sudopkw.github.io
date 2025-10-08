@@ -1,111 +1,49 @@
 {
   "data": [
     {
-      "name": "Digital Alchemist & Grandmagus",
-      "company": "ByteBakers",
-      "date": "Jan 2024 - Now",
-      "title": "Software Engineer & Founder (Go, JavaScript, C, HTMX, PostgreSQL, TailwindCSS)",
+      "name": "Lua Alchemist & Failure",
+      "company": "None",
+      "date": "Dec 2019 - Feb 2022",
+      "title": "Excersied in Lua programming, For the sole porpuse of {{Exploiting}} in {{ROBLOX}}. Ironic, Right?",
       "content": [
-        "We meticulously sculpt {{bespoke software}} and conjure {{hardware wonders}}, transcending the mundane.",
-        "In the digital symphony, our craft includes {{exotic spells and scrolls}}, weaving enchantment into the very fabric of technology."
+        "Made plenty of my own scripts, With a few of them being a {{pretty good success}} on my part.",
+        "During 2021, I decided to go away from making exploits like {{Autofarms}}, {{Kill-Auras}}, Etc. And mostly focused on {{'FE'}}, or 'Filtering Enabled' Scripts.",
+        "Which if you're not familiar with, Allows you to do {{a wide variety of things}}, and all you needed except for scripting knowledge, is {{creativity}}.",
+        "Although most of these scripts were terrible, Unlike the ones i've made closer to the end of this era as ROBLOX Introduced {{Byfron}}, I don't regret any of it as it was my passion for a couple of years and i've met some great people along the way, Who have helped me get more knowledge, And were {{great companions}}. Which in the end is all that matters."
       ]
     },
     {
-      "name": "TypeScript Wizard",
-      "company": "Shippr",
-      "date": "Jan 2023 - Jan 2024",
-      "title": "Full-stack TypeScript developer (React, React Native, Node.js, PostgreSQL, GraphQL, TypeORM, TailwindCSS)",
+      "name": "Python Stomper",
+      "company": "None",
+      "date": "Aug 2023 - March 2025",
+      "title": "Well, ROBLOX Exploiting has gone to shit. Let's try {{Python}}!",
       "content": [
-        "Part of a {{fast-paced team}} as a full-stack engineer on a huge monorepo comprising of a {{React-based SPA}} serving both internal users and customers, {{React Native app}} for couriers and a layer-based monolithic {{Node.js backend}} using a {{PostgreSQL}} database.",
-        "I worked {{directly}} with the product department as well as with Shippr's operative department in order to {{solve}} both our customers' and partner-couriers' {{problems}} as well as our internal operatives teams' problems on a {{daily basis}}."
+        "What really inspired me is seeing all the Python multi-tools people made in CMD, Along with Discord Bots/Self-bots, So, I decided why not {{try it}}.",
+        "I went around making a {{Parental PIN Cracker}} for ROBLOX, There i go again, Being {{Unethical}}, Silly me.",
+        "This PIN Crackerk essentially {{did work}}, But was {{useless}} as it would get {{blocked from the ROBLOX API}} for spam. Cool, Right?",
+        "But, Even if this wasn't the case, it was again {{pretty dumb}} as if i were to even use it, I would need {{access to an account first}}.",
+        " ",
+        "Let's try to make a Discord Self bot! (Spoiler: It actually did work)",
+        "Again, Being unethical. I wanted to make a {{Self-bot}}, Not for {{Nuking}}, Although {{i did add that feature}}, ecsdi. But instead as a Discord bot i could run on my {{Alt-Account}} and use it in {{Group-Chats}} rather than servers.",
+        "It was mainly {{for fun}}, And just had silly commands based on {{spamming gifs/messages}}, saying {{pre-coded sentences}}, having a {{'Rate'}} system using {{random}}, Example: ",
+        "{{user:}} -StupidRate {{@User 2}}",
+        "bot: {{@User 2}} is (Random number from 1-100)% stupid!",
+        "It worked in a pretty simple matter, and as time went on i added more and more commands to it. So we will call that a {{success}}, And a {{learning experience}} for Python.",
+        "On the side, I also made a Auto-Reply Self-Bot, but this is irrelevant.",
+        " ",
+        "Note: ",
+        "after this project, I started making a {{Multi-tool}}, That went from something useless, to something... Semi-useless but pretty dang cool. I'll post a image in {{Projects}}. Don't expect anything too crazy though, Lmao."
       ]
     },
-    {
-      "name": "Code Magus & Guildmaster",
-      "company": "Metaoist Dsgn",
-      "date": "Sep 2021 - Jan 2023",
-      "title": "Full-stack TypeScript developer (React, Node.js, MongoDB, GraphQL, AWS)",
+        {
+      "name": "Lua Wizard (Part 2?)",
+      "company": "None",
+      "date": "July 2025 - Now",
+      "title": "Back after a few years, Let's see how much knowledge i have in {{Lua}}.",
       "content": [
-        "Designing, managing, developing and maintaining handcrafted {{SaaS}}, websites, {{applications}} and other web-based solutions. Our main target were small to medium businesses, physical or digital with some exclusive software aimed at {{Shopify}} merchants."
-      ]
-    },
-    {
-      "name": "TypeScript & Shopify Mechanist",
-      "company": "KBS Marketing",
-      "date": "Nov 2020 - Sep 2022",
-      "title": "Full-stack TypeScript developer & Shopify technician (React, Node.js, Shopify API)",
-      "content": [
-        "Member of a 4 (wo)men team working on an e-commerce website using {{Shopify}}, I was the technical side of it and wore multiple hats such as : CMS technician, {{front-end developer}} (HTML, CSS, Liquid, JavaScript) and {{Shopify app developer}} (Node.js & React/Polaris).",
-        "Part of my work consisted of giving {{technical analysis}} as well as assistance when my teammates had trouble with the CMS, hosting, mailing, etc.",
-        "The other part consisted of developing {{frontend-oriented content}} using Node.js (TypeScript), JavaScript, HTML, CSS and Liquid to better the website's {{UX}}, add functionalities or simply modify the existing theme or third-party applications' integrations.",
-        "Most of the work was done {{remotely}} with occasional in-person meeting with the other members of the team."
-      ]
-    },
-    {
-      "name": "C#/.Net Sorcerer",
-      "company": "Roggemans Development",
-      "date": "Oct. 2018",
-      "title": "Full-stack C#/.Net developer (C#, .Net, JavaScript)",
-      "content": [
-        "Working in a 2 men team, I participated to the building of a full {{e-commerce website}} for a major business in Liège, Belgium.",
-        "Based on a proprietary framework, itself built on top of the {{.Net}} framework (no CMS). The tools I used were: C#, .Net, JavaScript, HTML, CSS.",
-        "I had to learn C# and .Net in 2 weeks before the interview, my heavy background in C++ was a good help during the {{learning}} phase and my everyday work.",
-        "My main mission was to work on {{UI/UX}} and connect the backend and frontend while developing new components on the frontend."
-      ]
-    },
-    {
-      "name": "C++/C# Gamesmith",
-      "company": "Apoptosis Studio",
-      "date": "Jun 2013 - Oct 2018",
-      "title": "Game developer (C++, C#, Unity)",
-      "content": [
-        "My main area of action was : establishing a {{technical scope statement}} & creating a program (video games, servers, developing tools) working directly with the game designer to apply his ideas, see what is possible, what is not & what can be modified in an {{UX perspective}}.",
-        "Based on a game design document (GDD), with no technical terms or directives, I had to :",
-        "- {{Design}} & {{develop}} the program's architecture",
-        "- Define {{priorities}} in the program's development",
-        "- {{Prototype}} & create a {{MVP}} (Minimum Viable Product)",
-        "- Actively participate in {{UI design}}",
-        "- Actively participate in {{UX design}}",
-        "I have mainly worked on 3 projects with the game designer, one inside a bigger team. Except for the first game, I was {{fully in charge}} over the entire technical development. In the first one I was only on the client side (Game mechanics development, UI & UX design), the server side being worked on by another programmer."
-      ]
-    },
-    {
-      "name": "C++ Mage & Hardware Enchanter",
-      "company": "Decolagen Labs",
-      "date": "Sep 2017 - Nov 2017",
-      "title": "C++ embedded developer (C++, Arduino, C#, Unity)",
-      "content": [
-        "Working along with a 3D Designer/Modeler I had to develop several {{interactive}} programs, on a {{fast-prototyping}} basis.",
-        "One of them was an {{architectural visualization}} of our working place, called Archiviz.",
-        "Another one was a smartphone {{VR experience}} prototype that had to include some mechanics such as a grab & drop system.",
-        "The last project I worked on was a Game Design/UX {{experiment}} where I had to {{hack}} an indoor bike to a USB controller, then I had to make a simple procedurally generated roller coaster.",
-        "The user had then to pedal to make their character move along the roller coaster.",
-        "What was expected of me here was to {{quickly}} develop {{proofs of concepts}}, work along with the artist and modify the program's design {{on-the-go}}. Only keeping the bare essential."
-      ]
-    },
-    {
-      "name": "Tutorial NPC",
-      "company": "Proximus",
-      "date": "Jul 2014 - Dec 2014",
-      "title": "Helpdesk operator",
-      "content": [
-        "After receiving training on the company's tools and processes I had to take customer's calls and {{solve their problems}}.",
-        "What was expected from me was to follow \"as-is\" procedures from head to tail even if I knew the solution to the customer's problem.",
-        "I wasn't following standard procedures and used my {{knowledge in computer science}} and general networking to solve the customer's problem faster.",
-        "I had the {{opportunity}} to use the company \"expert\" tools even though I wasn't trained to do so. I {{studied those aside}} of my working time, in order to be more effective in my position."
-      ]
-    },
-    {
-      "name": "Binary Squire",
-      "company": "Open Source Community",
-      "date": "Feb 2010 - Jun 2013",
-      "title": "Student & Open Source contributor",
-      "content": [
-        "I contributed on several {{Open Source}} projects during three years, being in {{code}} writing & revision or in {{design}} discussion with more experienced developers. This is where I started {{programming}} and where I learned the most.",
-        "Some of the projects I have contributed to :",
-        "- Egloo platform (cultural initiative from France)",
-        "- Pinguino {{prototyping}} platform",
-        "- {{Hackerspace}} Global Grid"
+        "Well, I've gotten a way to Exploit again. Let's try to make a {{FE}} Sniper script! *boom!* That was actually... Pretty easy!",
+        "It turns out i was pretty successful, Despite being Rusty. But now the real test begins, My friend {{Galles}} asks me to make a {{ROBLOX}} game with him, And as i need to get back to {{Lua}} anyway, I agree. Yet, This time from an {{ethical side}}.",
+        "And... It was really painful. Damn, I really am rusty at this, Huh? As of right now i am still 'developing' a 'Hub' game, and it's getting easier by day i do it. Well, When i feel like it at least, Lmao. Sorry bro."
       ]
     }
   ]
