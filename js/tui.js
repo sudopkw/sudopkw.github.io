@@ -73,7 +73,7 @@ function setupBibleReloadButton(button) {
 
 async function fetchRandomBibleVerse() {
   const response = await fetch(
-    "https://labs.bible.org/api/?passage=random&type=json&callback=amen",
+    "nil",
   );
   const jsonpResponse = await response.text();
 
