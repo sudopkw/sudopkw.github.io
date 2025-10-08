@@ -43,119 +43,12 @@ const previousPosition = {
   sectionItemIndex: 0,
 };
 
-// Minecraft loading screen tips
-const MINECRAFT_TIPS = [
-  "Also try Terraria!",
-  "Loading chunks...",
-  "Don't dig straight down!",
-  "Creepers are scared of cats",
-  "The cake is a lie",
-  "Press F3 to debug",
-  "Water stops fall damage",
-  "Beds explode in the Nether",
-  "Eat food to heal",
-  "Redstone can be complicated",
-  "Make a nether portal!",
-  "Enchant your gear",
-  "Mine diamonds with iron",
-  "Watch out for lava!",
-  "Make a crafting table",
-  "Villagers trade emeralds",
-  "Fish for treasure",
-  "Build a house before night",
-  "Skeletons hate shields",
-  "Endermen don't like water"
-];
-
 function clamp(min, value, max) {
   return Math.min(Math.max(min, value), max);
 }
 
 function isMobile() {
   return window.innerWidth <= 768;
-}
-
-function setupTipReloadButton(button) {
-  if (button == null) {
-    return;
-  }
-
-  button.addEventListener("click", async () => {
-    await displayRandomMinecraftTip();
-  });
-
-  button.addEventListener("mouseleave", () => {
-    button.style.backgroundColor = "var(--clr-primary-txt)";
-  });
-  button.addEventListener("mouseenter", () => {
-    const color = ["var(--clr-blue)", "var(--clr-orange)", "var(--clr-pink)"][
-      Math.floor(Math.random() * 3)
-    ];
-    button.style.backgroundColor = color;
-  });
-}
-
-function getRandomMinecraftTip() {
-  return MINECRAFT_TIPS[Math.floor(Math.random() * MINECRAFT_TIPS.length)];
-}
-
-async function displayRandomMinecraftTip(parentElement = null) {
-  try {
-    const tipElement =
-      document.getElementsByClassName("minecraft-tip")?.[0] ||
-      document.createElement("div");
-
-    if (!tipElement.classList.contains("minecraft-tip")) {
-      tipElement.classList.add("minecraft-tip");
-    }
-
-    const reloadButton = document.createElement("button");
-    reloadButton.innerText = "🔁";
-    reloadButton.classList.add("tip-reload-button");
-    setupTipReloadButton(reloadButton);
-
-    const textElement = document.createElement("div");
-    textElement.innerHTML = "Loading tip...";
-
-    tipElement.innerHTML = "";
-
-    tipElement.appendChild(reloadButton);
-    tipElement.appendChild(textElement);
-
-    parentElement?.appendChild(tipElement);
-
-    // Small delay for effect
-    setTimeout(() => {
-      const tip = getRandomMinecraftTip();
-      textElement.innerHTML = tip
-        .replaceAll(
-          "Terraria",
-          `<span class="${getRandomTextColorClass()}">Terraria</span>`,
-        )
-        .replaceAll(
-          "Creepers",
-          `<span class="${getRandomTextColorClass()}">Creepers</span>`,
-        )
-        .replaceAll(
-          "Nether",
-          `<span class="${getRandomTextColorClass()}">Nether</span>`,
-        )
-        .replaceAll(
-          "Endermen",
-          `<span class="${getRandomTextColorClass()}">Endermen</span>`,
-        )
-        .replaceAll(
-          "Diamonds",
-          `<span class="${getRandomTextColorClass()}">Diamonds</span>`,
-        )
-        .replaceAll(
-          "Redstone",
-          `<span class="${getRandomTextColorClass()}">Redstone</span>`,
-        );
-    }, 500);
-  } catch (e) {
-    console.error(e);
-  }
 }
 
 function getRandomTextColorClass() {
@@ -283,7 +176,7 @@ async function displayContent() {
     const titleElement = document.createElement("h1");
     titleElement.innerHTML =
       sectionData.title != null
-        ? `<span class="${getRandomTextColorClass()}">${sectionData.title}</span>`
+        ? `<span class="${getRandomTextColorClass()}">${sectionData.title.replaceAll("{{","").replaceAll("}}","")}</span>`
         : null;
 
     const dateElement = document.createElement("h2");
@@ -410,6 +303,7 @@ async function displayContent() {
     logoElement.src = logoFileName;
     logoElement.id = "logo";
     logoElement.alt = "sudopkw";
+    logoElement.style.maxWidth = "300px";
 
     logoContainer.appendChild(logoElement);
 
@@ -428,10 +322,14 @@ async function displayContent() {
       innerContainerElement.appendChild(element);
     });
 
+    // Add "this is a test" box
+    const testBox = document.createElement("div");
+    testBox.classList.add("bible-verse");
+    testBox.innerHTML = "this is a test";
+    innerContainerElement.appendChild(testBox);
+
     outerContainerElement.appendChild(innerContainerElement);
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
-
-    await displayRandomMinecraftTip(innerContainerElement);
   }
 }
 
@@ -696,7 +594,6 @@ async function init() {
   initTouchListeners();
 
   await render(true, true);
-  await displayRandomMinecraftTip();
 }
 
 /** HIGHLIGHTING STUFF **/
