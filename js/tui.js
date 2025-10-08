@@ -159,15 +159,16 @@ async function displayContent() {
 
   const sectionName = left_sections[currentPosition.sectionIndex].name;
 
-  const response = await fetch(`data/${sectionName}.json`);
-  const { data } = await response.json();
-
-  const outerContainerElement = document.createElement("div");
-  outerContainerElement.classList.add("outer-paragraph-container");
-  const innerContainerElement = document.createElement("div");
-  innerContainerElement.classList.add("inner-paragraph-container");
-
+  // For home section, just show the original static content
   if (sectionName !== "home") {
+    const response = await fetch(`data/${sectionName}.json`);
+    const { data } = await response.json();
+
+    const outerContainerElement = document.createElement("div");
+    outerContainerElement.classList.add("outer-paragraph-container");
+    const innerContainerElement = document.createElement("div");
+    innerContainerElement.classList.add("inner-paragraph-container");
+
     innerContainerElement.classList.add("mt-4");
 
     const sectionData = data[currentPosition.sectionItemIndex];
@@ -294,42 +295,51 @@ async function displayContent() {
 
     colorizeCode();
   } else {
-    const logoFileName = `images/social-banner.jpg`;
-    const logoContainer = document.createElement("div");
-    logoContainer.id = "logo-container";
-
-    const logoElement = document.createElement("img");
-    logoElement.loading = "eager";
-    logoElement.src = logoFileName;
-    logoElement.id = "logo";
-    logoElement.alt = "sudopkw";
-    logoElement.style.maxWidth = "300px";
-
-    logoContainer.appendChild(logoElement);
-
-    clearMainContent();
-    MAIN_CONTENT_SECTION.appendChild(logoContainer);
-
-    data.forEach((d) => {
-      const element = document.createElement("div");
-
-      d.content.forEach((c) => {
-        const paragraph = document.createElement("p");
-        paragraph.innerHTML = colorizeString(c);
-        element.appendChild(paragraph);
-      });
-
-      innerContainerElement.appendChild(element);
-    });
-
-    // Add "this is a test" box
-    const testBox = document.createElement("div");
-    testBox.classList.add("bible-verse");
-    testBox.innerHTML = "this is a test";
-    innerContainerElement.appendChild(testBox);
-
-    outerContainerElement.appendChild(innerContainerElement);
-    MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
+    // For home section, restore the original static HTML content
+    const originalHomeContent = `
+      <div id="logo-container">
+        <img loading="eager" src="images/social-banner.jpg" id="logo" alt="sudopkw" decoding="async" style="max-width: 300px; border-radius: 8px;" />
+      </div>
+      <div class="outer-paragraph-container">
+        <div class="inner-paragraph-container">
+          <div>
+            <p>Hiya, I'm <span class="text-blue">sudopkw</span></p>
+            <p>Mainly a <span class="text-orange">Coder</span> and <span class="text-pink">Gamer</span>.</p>
+          </div>
+          <div>
+            <p>Although i rarely do code nowadays, Most of my focus goes to <span class="text-orange">Lua</span>, As i explore other programming languages such as <span class="text-pink">C++</span>, <span class="text-blue">JavaScript</span> and more.</p>
+            <p>I also do enjoy programming in almost beginner-like languages such as <span class="text-pink">Python</span>, and will go ahead and learn <span class="text-blue">C</span> in the near future for some fun projects of my own, that will mostly result in a chaotic fail.</p>
+          </div>
+          <div>
+            <p>I'd also like to advance to the real world, Tinkering with electronics, Exploring gadgets like <span class="text-orange">WiFi Deauthers</span>, As i find it interesting on how real world hacking works.</p>
+            <p>I'm hoping to have some free time and courage in the near future to learn more about how things work, As it's what im passionate about and it's quite sad that i haven't been focused on it as much recently.</p>
+          </div>
+          <div>
+            <p>This entire website is also a learning experience to me, As i inspect the code and try to get an understanding of how <span class="text-blue">JSON</span> and <span class="text-orange">JavaScript</span> work.</p>
+            <p>And it is also totally not because i love <span class="text-pink">TUI</span>, And i totally didn't choose this project on porpuse because of said not-reason.</p>
+            <p>Here, You can check out some of my links. They're not related to any of my real work, However i will link my <span class="text-blue">Github</span> down below.</p>
+          </div>
+          <div>
+            <p>So, As i mentioned i am a <span class="text-orange">Gamer</span> ! , So if you feel like it, Check out my <a href="https://steamcommunity.com/id/sudopkw/" target="_blank" class="text-blue">Steam</a>.</p>
+            <p>If you'd like to add me as a friend, Or leave a comment in my steam wall, Feel free to do so.</p>
+            <p>Here's also my <a href="https://www.tiktok.com/@whoamipkw/" target="_blank" class="text-pink">Tiktok</a>, Along with my <a href="https://stats.fm/pkw/" target="_blank" class="text-green">Spoti-Stats</a>, So feel free to catch up on the Music i listen to!</p>
+            <p>And finally, Here's my <a href="https://github.com/sudopkw/" target="_blank" class="text-pink">GitHub</a>.</p>
+          </div>
+          <div id="desktop-help">
+            <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
+            <p>You can also <span class="text-orange">navigate</span> through the sections using the <span class="text-blue">arrow keys</span> or <span class="text-orange">Vim motions</span>.</p>
+          </div>
+          <p id="mobile-help">
+            <span class="text-pink">Press</span> the menu button at the top-right of the screen to start <span class="text-orange">exploring</span> the website.
+          </p>
+          <div class="bible-verse">
+            this is a test
+          </div>
+        </div>
+      </div>
+    `;
+    
+    MAIN_CONTENT_SECTION.innerHTML = originalHomeContent;
   }
 }
 
