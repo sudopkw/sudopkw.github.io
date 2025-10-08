@@ -50,16 +50,6 @@ function clamp(min, value, max) {
 function isMobile() {
   return window.innerWidth <= 768;
 }
-
-function setupBibleReloadButton(button) {
-  if (button == null) {
-    return;
-  }
-
-  button.addEventListener("click", async () => {
-    await displayRandomBibleVerse();
-  });
-
   button.addEventListener("mouseleave", () => {
     button.style.backgroundColor = "var(--clr-primary-txt)";
   });
@@ -322,7 +312,7 @@ async function displayContent() {
     logoElement.loading = "eager";
     logoElement.src = logoFileName;
     logoElement.id = "logo";
-    logoElement.alt = "Wallenart";
+    logoElement.alt = "sudopkw";
 
     logoContainer.appendChild(logoElement);
 
@@ -609,7 +599,6 @@ async function init() {
   initTouchListeners();
 
   await render(true, true);
-  await displayRandomBibleVerse();
 }
 
 /** HIGHLIGHTING STUFF **/
