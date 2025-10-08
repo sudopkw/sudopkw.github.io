@@ -1,46 +1,28 @@
 {
   "data": [
     {
-      "name": "none",
-      "images": ["../images/findleads1.webp", "../images/findleads2.webp"],
-      "year": 2024,
-      "demoUrl": "url",
+      "name": "PKW.FUN",
+      "images": ["../images/image.png"],
+      "year": 2025,
+      "demoUrl": "none",
       "content": [
-        "none",
-        "none"
+        "A meh, pretty much {{useless multi-tool}} that mostly just opens {{web pages}} to things i would need, along with a DDoS tool that {{probably even doesn't work}} because ooh, So kewl.",
+        "This is also {{unfinished}}, so some things aren't even coded. {{I gave up this project because i got bored of it}} and wanted to stir away from {{Python.}}"
       ],
       "technologies": [
-        "none",
-        "none",
-        "none",
-        "none",
-        "none",
-        "none"
+        "Python",
+        "JSON"
       ]
     },
     {
-      "name": "none",
-      "year": 2024,
-      "demoUrl": "url",
+      "name": "Discord Self-Bot",
+      "year": 2023,
+      "demoUrl": "https://github.com/sudopkw/Alt-Bot",
       "content": [
-        "none",
-        "none"
+        "Used for fun, Now {{broken}} and the only way for fixing it is to {{recode it}} and make it an actual {{Discord BOT}}. Which i have done, But {{lost the files}}. So sucks to be me i guess.",
+        "This project is long gone, And i will most likely never make another one, ecsdi."
       ],
-      "technologies": ["none", "none", "none", "none"]
-    },
-    {
-      "name": "none",
-      "year": 2024,
-      "demoUrl": "url",
-      "content": [
-        "none",
-        "none",
-        "none"
-      ],
-      "technologies": [
-        "none",
-        "none"
-      ]
+      "technologies": ["Python", "JSON", "Discord API"]
     }
   ]
 }
