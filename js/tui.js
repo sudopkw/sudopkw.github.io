@@ -73,7 +73,7 @@ function setupBibleReloadButton(button) {
 
 async function fetchRandomBibleVerse() {
   const response = await fetch(
-    "https://labs.bible.org/api/?passage=random&type=json&callback=amen",
+    "https://api.forismatic.com/api/1.0/?method=getQuote&format=jsonp&lang=en&jsonp=amen",
   );
   const jsonpResponse = await response.text();
 
@@ -82,7 +82,13 @@ async function fetchRandomBibleVerse() {
   const jsonString = jsonpResponse.substring(jsonStartIndex, jsonEndIndex + 1);
   const data = JSON.parse(jsonString);
 
-  return data;
+  // Convert the quote data to match your existing structure
+  return {
+    text: data.quoteText,
+    bookname: data.quoteAuthor || "Unknown",
+    chapter: "",
+    verse: ""
+  };
 }
 
 async function displayRandomBibleVerse(parentElement = null) {
@@ -99,7 +105,7 @@ async function displayRandomBibleVerse(parentElement = null) {
     referenceElement.classList.add("reference");
 
     const textElement = document.createElement("div");
-    textElement.innerHTML = "Connecting to the Holy Ghost...";
+    textElement.innerHTML = "Fetching...";
 
     const reloadButton = document.createElement("button");
     setupBibleReloadButton(reloadButton);
@@ -113,32 +119,8 @@ async function displayRandomBibleVerse(parentElement = null) {
     parentElement?.appendChild(bibleVerse);
 
     const { text, bookname, chapter, verse } = await fetchRandomBibleVerse();
-    referenceElement.innerText = `${bookname} ${chapter}:${verse}`;
-    textElement.innerHTML = text
-      .replaceAll(
-        "Jesus",
-        `<span class="${getRandomTextColorClass()}">Jesus</span>`,
-      )
-      .replaceAll(
-        "Christ",
-        `<span class="${getRandomTextColorClass()}">Christ</span>`,
-      )
-      .replaceAll(
-        "Savior",
-        `<span class="${getRandomTextColorClass()}">Savior</span>`,
-      )
-      .replaceAll(
-        "Lord",
-        `<span class="${getRandomTextColorClass()}">Lord</span>`,
-      )
-      .replaceAll(
-        "God",
-        `<span class="${getRandomTextColorClass()}">God</span>`,
-      )
-      .replaceAll(
-        "Faith",
-        `<span class="${getRandomTextColorClass()}">Faith</span>`,
-      );
+    referenceElement.innerText = `— ${bookname}`;
+    textElement.innerHTML = `"${text}"`;
   } catch (e) {
     console.error(e);
   }
