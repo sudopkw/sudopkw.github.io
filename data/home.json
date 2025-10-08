@@ -2,27 +2,35 @@
   "data": [
     {
       "content": [
-        "Hi, I'm {{Arthur}} Wallendorff 🤙",
-        "A {{backend-focused}} software engineer and {{father}}."
+        "Hiya, I'm {{sudopkw}}",
+        "Mainly a {{Coder}} and {{Gamer}}."
       ]
     },
     {
       "content": [
-        "Although my focus is on backend, most of my professional experience has been as a {{full-stack}} developer.",
-        "I also enjoy programming low level stuff, like {{C}} and tinkering with {{electronics}}."
+        "Although i rarely do code nowadays, Most of my focus goes to {{Lua}}, As i explore other programming languages such as {{C++}}, {{JavaScript}} and more.",
+        "I also do enjoy programming in almost beginner-like languages such as {{Python}}, and will go ahead and learn {{C}} in the near future for some fun projects of my own, that will mostly result in a chaotic fail."
       ]
     },
     {
       "content": [
-        "Another great interest of mine is {{UX design}}, that I like to approach in a broader sense and not only through user interfaces.",
-        "I'm a {{passionate}} developer, always looking for new challenges and opportunities to learn."
+        "I'd also like to advance to the real world, Tinkering with electronics, Exploring gadgets like {{WiFi Deauthers}}, As i find it interesting on how real world hacking works.",
+        "I'm hoping to have some free time and courage in the near future to learn more about how things work, As it's what im passionate about and it's quite sad that i haven't been focused on it as much recently."
       ]
     },
     {
       "content": [
-        "Nowadays, you can find me on <a href=\"https://x.com/AutisticOvrflow\" target=\"_blank\" class=\"text-orange\">X (Twitter)</a>.",
-        "If you like cringe-inducing experiences, feel free to connect on <a href=\"https://www.linkedin.com/in/wallenart/\" target=\"_blank\" class=\"text-blue\">LinkedIn</a>.",
-        "You can always check out my work on <a href=\"https://www.github.com/zyriab/\" target=\"_blank\" class=\"text-pink\">GitHub</a>."
+        "This entire website is also a learning experience to me, As i inspect the code and try to get an understanding of how {{JSON}} and {{JavaScript}} work.",
+        "And it is also totally not because i love {{TUI}}, And i totally didn't choose this project on porpuse because of said not-reason.",
+        "Here, You can check out some of my links. They're not related to any of my real work, However i will link my {{Github}} down below."
+      ]
+     },
+     {
+      "content": [
+        "So, As i mentioned i am a {{Gamer}} ! , So if you feel like it, Check out my <a href=\"https://steamcommunity.com/id/sudopkw/\" target=\"_blank\" class=\"text-blue\">Steam</a>.",
+        "If you'd like to add me as a friend, Or leave a comment in my steam wall, Feel free to do so.",
+        "Here's also my <a href=\"https://www.tiktok.com/@whoamipkw/\" target=\"_blank\" class=\"text-purple\">Tiktok</a>, Along with my <a href=\"https://stats.fm/pkw/\" target=\"_blank\" class=\"text-green\">Spoti-Stats</a>, So feel free to catch up on the Music i listen to!",
+        "And finally, Here's my <a href=\"https://github.com/sudopkw/\" target=\"_blank\" class=\"text-pink\">GitHub</a>."
       ]
     },
     {
