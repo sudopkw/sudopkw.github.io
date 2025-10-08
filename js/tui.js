@@ -51,99 +51,6 @@ function isMobile() {
   return window.innerWidth <= 768;
 }
 
-function setupBibleReloadButton(button) {
-  if (button == null) {
-    return;
-  }
-
-  button.addEventListener("click", async () => {
-    await displayRandomBibleVerse();
-  });
-
-  button.addEventListener("mouseleave", () => {
-    button.style.backgroundColor = "var(--clr-primary-txt)";
-  });
-  button.addEventListener("mouseenter", () => {
-    const color = ["var(--clr-blue)", "var(--clr-orange)", "var(--clr-pink)"][
-      Math.floor(Math.random() * 3)
-    ];
-    button.style.backgroundColor = color;
-  });
-}
-
-async function fetchRandomBibleVerse() {
-  const response = await fetch(
-    "https://labs.bible.org/api/?passage=random&type=json&callback=amen",
-  );
-  const jsonpResponse = await response.text();
-
-  const jsonStartIndex = jsonpResponse.indexOf("{");
-  const jsonEndIndex = jsonpResponse.lastIndexOf("}");
-  const jsonString = jsonpResponse.substring(jsonStartIndex, jsonEndIndex + 1);
-  const data = JSON.parse(jsonString);
-
-  return data;
-}
-
-async function displayRandomBibleVerse(parentElement = null) {
-  try {
-    const bibleVerse =
-      document.getElementsByClassName("bible-verse")?.[0] ||
-      document.createElement("div");
-
-    if (!bibleVerse.classList.contains("bible-verse")) {
-      bibleVerse.classList.add("bible-verse");
-    }
-
-    const referenceElement = document.createElement("div");
-    referenceElement.classList.add("reference");
-
-    const textElement = document.createElement("div");
-    textElement.innerHTML = "Connecting to the Holy Ghost...";
-
-    const reloadButton = document.createElement("button");
-    setupBibleReloadButton(reloadButton);
-
-    bibleVerse.innerHTML = "";
-
-    bibleVerse.appendChild(reloadButton);
-    bibleVerse.appendChild(textElement);
-    bibleVerse.appendChild(referenceElement);
-
-    parentElement?.appendChild(bibleVerse);
-
-    const { text, bookname, chapter, verse } = await fetchRandomBibleVerse();
-    referenceElement.innerText = `${bookname} ${chapter}:${verse}`;
-    textElement.innerHTML = text
-      .replaceAll(
-        "Jesus",
-        `<span class="${getRandomTextColorClass()}">Jesus</span>`,
-      )
-      .replaceAll(
-        "Christ",
-        `<span class="${getRandomTextColorClass()}">Christ</span>`,
-      )
-      .replaceAll(
-        "Savior",
-        `<span class="${getRandomTextColorClass()}">Savior</span>`,
-      )
-      .replaceAll(
-        "Lord",
-        `<span class="${getRandomTextColorClass()}">Lord</span>`,
-      )
-      .replaceAll(
-        "God",
-        `<span class="${getRandomTextColorClass()}">God</span>`,
-      )
-      .replaceAll(
-        "Faith",
-        `<span class="${getRandomTextColorClass()}">Faith</span>`,
-      );
-  } catch (e) {
-    console.error(e);
-  }
-}
-
 function getRandomTextColorClass() {
   return COLORS[Math.floor(Math.random() * COLORS.length)];
 }
@@ -416,8 +323,6 @@ async function displayContent() {
 
     outerContainerElement.appendChild(innerContainerElement);
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
-
-    await displayRandomBibleVerse(innerContainerElement);
   }
 }
 
@@ -682,7 +587,6 @@ async function init() {
   initTouchListeners();
 
   await render(true, true);
-  await displayRandomBibleVerse();
 }
 
 /** HIGHLIGHTING STUFF **/
