@@ -8,7 +8,7 @@
     "I have used Lua to create {{unfair game advantage exploits}}, {{server scripts within a game}}.",
     "I have also used Lua to develop {{projects}} for {{hobbyists}}, {{startups}}, {{game creators}}."
       ],
-      "snippet": "snippet.lua"
+      "snippet": "lua"
     },
      {
       "name": " Python",
@@ -17,7 +17,7 @@
     "I have been using Python for about {{2 years}} and I am familiar with it. I have used it to build {{various tools}}, {{automation scripts}}, {{generating scripts}}, and even {{bots}}",
     "I have also used Python to develop {{projects}} for me and some of my friends."
       ],
-      "snippet": "snippet.py"
+      "snippet": "py"
     },
     {
       "name": " Linux",
