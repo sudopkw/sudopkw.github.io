@@ -386,7 +386,7 @@ async function displayContent() {
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
 
     colorizeCode();
-  } else {
+  } else { 
     const logoFileName = `images/logo${Math.floor(Math.random() * 3) + 1}.svg`;
     const logoContainer = document.createElement("div");
     logoContainer.id = "logo-container";
