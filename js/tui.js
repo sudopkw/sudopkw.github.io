@@ -99,7 +99,7 @@ async function displayRandomBibleVerse(parentElement = null) {
     referenceElement.classList.add("reference");
 
     const textElement = document.createElement("div");
-    textElement.innerHTML = "Connecting to the Holy Ghost...";
+    textElement.innerHTML = "Fetching...";
 
     const reloadButton = document.createElement("button");
     setupBibleReloadButton(reloadButton);
@@ -395,7 +395,7 @@ async function displayContent() {
     logoElement.loading = "eager";
     logoElement.src = logoFileName;
     logoElement.id = "logo";
-    logoElement.alt = "Wallenart";
+    logoElement.alt = "sudopkw ! logo failed to fetch";
 
     logoContainer.appendChild(logoElement);
 
