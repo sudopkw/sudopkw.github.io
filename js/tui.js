@@ -387,7 +387,7 @@ async function displayContent() {
 
     colorizeCode();
   } else {
-    const logoFileName = `images/logo${Math.floor(Math.random() * 4) + 1}.svg`;
+    const logoFileName = `images/logo${Math.floor(Math.random() * 4) + 1}.jpg`;
     const logoContainer = document.createElement("div");
     logoContainer.id = "logo-container";
 
