@@ -155,10 +155,14 @@ function clearMainContent() {
 }
 
 async function displayContent() {
+  if (!MAIN_CONTENT_SECTION) {
+    console.error('Main content section not found');
+    return;
+  }
+
   clearMainContent();
 
   const sectionName = left_sections[currentPosition.sectionIndex].name;
-
   const response = await fetch(`data/${sectionName}.json`);
   const { data } = await response.json();
 
@@ -289,7 +293,7 @@ async function displayContent() {
     innerContainerElement.prepend(topElement);
     outerContainerElement.appendChild(innerContainerElement);
 
-    clearMainContent();
+    // REMOVED THE SECOND clearMainContent() CALL HERE
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
 
     colorizeCode();
@@ -306,7 +310,7 @@ async function displayContent() {
 
     logoContainer.appendChild(logoElement);
 
-    clearMainContent();
+    // REMOVED THE SECOND clearMainContent() CALL HERE
     MAIN_CONTENT_SECTION.appendChild(logoContainer);
 
     data.forEach((d) => {
@@ -323,11 +327,10 @@ async function displayContent() {
 
     outerContainerElement.appendChild(innerContainerElement);
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
-
-    
   }
 }
 
+    
 function clearSelectionStyling(scrollToTop) {
   if (isMobile()) {
     const selectedElement = document.getElementsByClassName("selected-item")[0];
