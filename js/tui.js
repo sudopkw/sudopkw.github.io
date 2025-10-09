@@ -1,4 +1,4 @@
-// github please update me
+
 const MAIN_CONTAINER = document.getElementById("main-container");
 const SECTION_CONTAINER = document.getElementById("section-container");
 const LEFT_SECTION = document.getElementById("left-section");
