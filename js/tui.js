@@ -58,7 +58,7 @@ function setupBibleReloadButton(button) {
   }
 
   button.addEventListener("click", async () => {
-    await displayRandomBibleVerse();
+//    await displayRandomBibleVerse();
   });
 
   button.addEventListener("mouseleave", () => {
