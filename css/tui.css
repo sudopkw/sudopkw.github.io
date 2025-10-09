@@ -58,6 +58,10 @@ body {
   color: var(--clr-primary-txt);
 }
 
+.bible-verse {
+    display: none;
+}
+
 *::-webkit-scrollbar {
   width: 0.4em;
   background-color: var(--clr-primary-bg);
