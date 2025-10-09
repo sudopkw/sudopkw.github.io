@@ -324,7 +324,7 @@ async function displayContent() {
     outerContainerElement.appendChild(innerContainerElement);
     MAIN_CONTENT_SECTION.appendChild(outerContainerElement);
 
-    await displayRandomBibleVerse(innerContainerElement);
+    
   }
 }
 
@@ -589,7 +589,7 @@ async function init() {
   initTouchListeners();
 
   await render(true, true);
-  await displayRandomBibleVerse();
+ 
 }
 
 /** HIGHLIGHTING STUFF **/
