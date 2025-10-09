@@ -37,6 +37,33 @@
     <title>sudopkw - Coder & Gamer</title>
 </head>
 
+
+     <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      fetch("data/home.json")
+        .then(res => res.json())
+        .then(json => {
+          const container = document.querySelector(".inner-paragraph-container");
+          if (!container) return;
+
+          // clear only text nodes, not entire structure
+          container.querySelectorAll("div").forEach(div => div.remove());
+
+          json.data.forEach(section => {
+            const div = document.createElement("div");
+            section.content.forEach(line => {
+              const formatted = line.replace(/\{\{(.*?)\}\}/g, '<span class="text-orange">$1</span>');
+              const p = document.createElement("p");
+              p.innerHTML = formatted;
+              div.appendChild(p);
+            });
+            container.appendChild(div);
+          });
+        })
+        .catch(err => console.error("Failed to load home.json:", err));
+    });
+    </script>
+
     <!-- REMOVE ME AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
 <script>
 fetch("data/home.json")
