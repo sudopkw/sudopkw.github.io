@@ -1,3 +1,4 @@
+// why
 const MAIN_CONTAINER = document.getElementById("main-container"),
     SECTION_CONTAINER = document.getElementById("section-container"),
     LEFT_SECTION = document.getElementById("left-section"),
