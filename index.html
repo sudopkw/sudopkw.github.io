@@ -37,6 +37,30 @@
     <title>sudopkw - Coder & Gamer</title>
 </head>
 
+    <!-- REMOVE ME AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
+<script>
+fetch("data/home.json")
+  .then(res => res.json())
+  .then(json => {
+    const container = document.querySelector(".inner-paragraph-container");
+    container.innerHTML = ""; // Clear default text
+
+    json.data.forEach(section => {
+      const div = document.createElement("div");
+      section.content.forEach(line => {
+        // Replace {{text}} with styled span elements
+        const formatted = line.replace(/\{\{(.*?)\}\}/g, '<span class="text-orange">$1</span>');
+        const p = document.createElement("p");
+        p.innerHTML = formatted;
+        div.appendChild(p);
+      });
+      container.appendChild(div);
+    });
+  })
+  .catch(err => console.error("Failed to load home.json:", err));
+</script>
+
+<!-- AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA REMOVE ME -->
 <body class="darkmode">
     <div id="main-container">
         <div class="nav-container">
