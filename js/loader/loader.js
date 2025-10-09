@@ -1,48 +1,17 @@
-const IS_DEV = "localhost" === window.location.hostname || "127.0.0.1" === window.location.hostname;
-const CSS_PATH = IS_DEV ? "css/tui.css" : "css/tui.min.css";
-const JS_PATH = IS_DEV ? "js/tui.js" : "js/tui.min.js";
+// Simple loader that just loads the files and lets the script handle initialization
+const IS_DEV = window.location.hostname.includes("localhost") || 
+               window.location.hostname.includes("127.0.0.1");
 
-function loadDependency(path, type, callback) {
-    const head = document.head;
-    const existingStyle = document.getElementById("min-style");
-    
-    const element = type === "script" 
-        ? document.createElement("script") 
-        : document.createElement("link");
-    
-    if (type === "script") {
-        element.type = "text/javascript";
-        element.src = path;
-        if (callback) {
-            element.onload = callback;
-            element.onerror = function() {
-                console.error("Failed to load script: " + path);
-            };
-        }
-    } else {
-        element.rel = "stylesheet";
-        element.href = path;
-    }
-    
-    head.appendChild(element);
-    existingStyle?.remove();
-}
+// Load CSS
+const css = document.createElement("link");
+css.rel = "stylesheet";
+css.href = IS_DEV ? "css/tui.css" : "css/tui.min.css";
+document.head.appendChild(css);
 
-// Load CSS first, then JS
-loadDependency(CSS_PATH, "link");
-loadDependency(JS_PATH, "script", function() {
-    // Wait a bit to ensure the script is fully parsed
-    setTimeout(function() {
-        if (typeof init === 'function') {
-            init();
-        } else {
-            console.error('init function not found');
-            // Fallback: try to initialize when DOM is ready
-            document.addEventListener('DOMContentLoaded', function() {
-                if (typeof init === 'function') {
-                    init();
-                }
-            });
-        }
-    }, 100);
-});
+// Remove old style if exists
+document.getElementById("min-style")?.remove();
+
+// Load JS - let it handle its own initialization
+const js = document.createElement("script");
+js.src = IS_DEV ? "js/tui.js" : "js/tui.min.js";
+document.head.appendChild(js);
