@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://sudopkw.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:title" content="sudopkw - Software Engineer">
-    <meta property="og:image" content="/images/social-banner.jpg">
+    <meta property="og:image" content="images/social-banner.jpg">
     <meta property="og:image:alt" content="sudopkw">
     <meta property="og:site_name" content="sudopkw.github.io">
     <meta property="og:description" content="Software Engineer & Developer">
@@ -23,19 +23,19 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="sudopkw - Software Engineer">
     <meta name="twitter:description" content="Software Engineer & Developer">
-    <meta name="twitter:image" content="/images/social-banner.jpg">
+    <meta name="twitter:image" content="images/social-banner.jpg">
     <meta name="twitter:image:alt" content="sudopkw.github.io">
     <meta name="twitter:site" content="@sudopkw">
 
     <link href="images/favicon.ico" rel="icon" />
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/tui.min.css">
     <title>sudopkw - Software Engineer</title>
 </head>
 
 <body class="darkmode">
     <div id="main-container">
         <div class="nav-container">
-            <div id="nav-logo">sudopkw</div>
+            <img id="nav-logo" loading="eager" src="images/logo2.svg" alt="sudopkw" decoding="async" />
             <div id="hamburger-menu">
                 <input class="checkbox" type="checkbox" name="hamburger-toggle" aria-label="Mobile menu toggle" />
                 <div class="hamburger-lines">
@@ -45,87 +45,104 @@
                 </div>
             </div>
         </div>
-        
         <div id="section-container">
             <div id="left-section">
                 <header class="container selected-frame" id="home">
                     <div class="container-content">
-                        <div class="title">
-                            <p>Home</p>
+                        <div class="title decorating-text">
+                            <p>
+                                Home
+                            </p>
+                            <div></div>
                         </div>
                         <p id="home-section-paragraph">
-                            Hello! I'm <span class="text-blue">sudopkw</span>, a software engineer.
+                            Hello! I'm <span class="text-blue">sudopkw</span>, a passionate software engineer.
+                        </p>
+                        <p id="mobile-help">
+                            <span class="text-pink">Press</span> around to <span class="text-orange">explore</span>
+                            the website.
                         </p>
                     </div>
                 </header>
-                
                 <div class="container" id="experience">
                     <div class="container-content">
-                        <div class="title">
-                            <p>Experience</p>
+                        <div id="experience-title" class="title decorating-text">
+                            <p>
+                                Experience
+                            </p>
+                            <div></div>
                         </div>
-                        <div class="list-index">
+                        <div id="experience-index" class="list-index decorating-text">
                             <p>1 of <span id="experience-count">0</span></p>
+                            <div></div>
                         </div>
                         <div class="ui-list" id="experience-list">
-                            <!-- Experience items loaded from JSON -->
+                            <!-- Experience items loaded dynamically -->
                         </div>
                     </div>
                 </div>
-                
                 <div class="container" id="projects">
                     <div class="container-content">
-                        <div class="title">
+                        <div class="title decorating-text">
                             <p>Projects</p>
+                            <div></div>
                         </div>
-                        <div class="list-index">
+                        <div class="list-index decorating-text">
                             <p>1 of <span id="projects-count">0</span></p>
+                            <div></div>
                         </div>
                         <div class="ui-list" id="projects-list">
-                            <!-- Project items loaded from JSON -->
+                            <!-- Project items loaded dynamically -->
                         </div>
                     </div>
                 </div>
-                
                 <div class="container" id="skills">
                     <div class="container-content">
-                        <div class="title">
-                            <p>Skills</p>
+                        <div id="skills-title" class="title decorating-text">
+                            <p>
+                                Skills
+                            </p>
+                            <div></div>
                         </div>
-                        <div class="list-index">
+                        <div id="skills-index" class="list-index decorating-text">
                             <p>1 of <span id="skills-count">0</span></p>
+                            <div></div>
                         </div>
                         <div class="ui-list" id="skills-list">
-                            <!-- Skill items loaded from JSON -->
+                            <!-- Skill items loaded dynamically -->
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div id="right-section">
                 <div class="container h-fill" id="main-content">
                     <div class="container-content">
                         <div id="logo-container">
-                            <div id="logo">sudopkw</div>
+                            <img loading="eager" src="images/logo2.svg" id="logo" alt="sudopkw" decoding="async" />
                         </div>
-                        <div class="content-area" id="content-display">
-                            <!-- Dynamic content will be loaded here -->
-                            <div class="home-content">
-                                <p>Hi, I'm <span class="text-blue">sudopkw</span> 👋</p>
-                                <p>A software engineer passionate about building great products.</p>
-                                <p>Click on the sections to explore my work and experience.</p>
+                        <div class="outer-paragraph-container">
+                            <div class="inner-paragraph-container" id="dynamic-content">
+                                <div>
+                                    <p>Hi, I'm <span class="text-blue">sudopkw</span> 🤙</p>
+                                    <p>A <span class="text-orange">software engineer</span> passionate about building great products.</p>
+                                </div>
+                                <div id="desktop-help">
+                                    <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and <span class="text-orange">experience</span>.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <footer class="container" id="footer">
+        <footer class="container text-blue" id="footer">
+            <div class="footer-item" id="footer-help">
+                Use mouse or keyboard to navigate
+            </div>
             <div class="footer-item">
-                <a href="https://github.com/sudopkw" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/sudopkw" target="_blank">LinkedIn</a>
-                <a href="mailto:sudopkw@example.com" target="_blank">Email</a>
+                <a class="text-blue" href="https://github.com/sudopkw" target="_blank">
+                    GitHub
+                </a>
             </div>
         </footer>
     </div>
@@ -134,23 +151,45 @@
         // Load data from JSON files
         async function loadData() {
             try {
+                const baseUrl = 'https://sudopkw.github.io/data';
+                
                 // Load experience data
-                const experienceResponse = await fetch('data/experience.json');
+                const experienceResponse = await fetch(`${baseUrl}/experience.json`);
                 const experienceData = await experienceResponse.json();
                 displayExperience(experienceData);
                 
                 // Load projects data
-                const projectsResponse = await fetch('data/projects.json');
+                const projectsResponse = await fetch(`${baseUrl}/projects.json`);
                 const projectsData = await projectsResponse.json();
                 displayProjects(projectsData);
                 
                 // Load skills data
-                const skillsResponse = await fetch('data/skills.json');
+                const skillsResponse = await fetch(`${baseUrl}/skills.json`);
                 const skillsData = await skillsResponse.json();
                 displaySkills(skillsData);
                 
             } catch (error) {
                 console.error('Error loading data:', error);
+                // Fallback to local paths if GitHub Pages fails
+                loadLocalData();
+            }
+        }
+
+        async function loadLocalData() {
+            try {
+                const experienceResponse = await fetch('data/experience.json');
+                const experienceData = await experienceResponse.json();
+                displayExperience(experienceData);
+                
+                const projectsResponse = await fetch('data/projects.json');
+                const projectsData = await projectsResponse.json();
+                displayProjects(projectsData);
+                
+                const skillsResponse = await fetch('data/skills.json');
+                const skillsData = await skillsResponse.json();
+                displaySkills(skillsData);
+            } catch (error) {
+                console.error('Error loading local data:', error);
             }
         }
 
@@ -162,11 +201,9 @@
             
             experiences.forEach(exp => {
                 const expItem = document.createElement('div');
-                expItem.className = 'experience-item';
                 expItem.innerHTML = `
-                    <div class="exp-title">${exp.role}</div>
-                    <div class="exp-company">@ ${exp.company}</div>
-                    <div class="exp-period">${exp.period}</div>
+                    <div>${exp.role}</div>
+                    <div>@ <span class="text-orange">${exp.company}</span></div>
                 `;
                 experienceList.appendChild(expItem);
             });
@@ -180,11 +217,7 @@
             
             projects.forEach(project => {
                 const projectItem = document.createElement('div');
-                projectItem.className = 'project-item';
-                projectItem.innerHTML = `
-                    <div class="project-name">${project.name}</div>
-                    <div class="project-desc">${project.description}</div>
-                `;
+                projectItem.textContent = project.name;
                 projectsList.appendChild(projectItem);
             });
         }
@@ -195,21 +228,19 @@
             
             let totalSkills = 0;
             
-            Object.keys(skillsData).forEach(category => {
-                const categorySkills = skillsData[category];
-                totalSkills += categorySkills.length;
-                
-                categorySkills.forEach(skill => {
-                    const skillItem = document.createElement('div');
-                    skillItem.className = 'skill-item';
-                    skillItem.innerHTML = `
-                        <span class="skill-name">${skill.name}</span>
-                    `;
-                    skillsList.appendChild(skillItem);
-                });
+            // Flatten all skills from categories
+            const allSkills = [];
+            Object.values(skillsData).forEach(category => {
+                allSkills.push(...category);
             });
             
-            skillsCount.textContent = totalSkills;
+            skillsCount.textContent = allSkills.length;
+            
+            allSkills.forEach(skill => {
+                const skillItem = document.createElement('div');
+                skillItem.innerHTML = `<img src="images/${skill.icon || 'default.svg'}" alt="" decoding="async" />${skill.name}`;
+                skillsList.appendChild(skillItem);
+            });
         }
 
         // Initialize when page loads
