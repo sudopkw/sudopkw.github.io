@@ -175,7 +175,7 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">1</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Yes</span></p>
                                 </div>
     
                                 <div id="desktop-help">
@@ -183,22 +183,17 @@
                                 </div>
 
 <script>
-
 document.addEventListener('DOMContentLoaded', function() {
-
     if (typeof(Storage) !== "undefined") {
-        let views = localStorage.getItem('pageViews');
-        if (views) {
-            views = parseInt(views) + 1;
-        } else {
-            views = 1;
-        }
-        localStorage.setItem('pageViews', views);
-        
-
+        const hasVisited = localStorage.getItem('hasVisited');
         const counterElement = document.getElementById('counter');
-        if (counterElement) {
-            counterElement.textContent = views;
+        
+        if (!hasVisited) {
+            
+            localStorage.setItem('hasVisited', 'true');
+            if (counterElement) counterElement.textContent = 'No';
+        } else {
+            if (counterElement) counterElement.textContent = 'Yes';
         }
     }
 });
