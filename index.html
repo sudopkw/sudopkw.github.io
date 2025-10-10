@@ -175,7 +175,7 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="visitCount">Fetching...</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">1</span></p>
                                 </div>
     
                                 <div id="desktop-help">
@@ -184,22 +184,24 @@
 
 <script>
 
-fetch('https://api.countapi.xyz/get/sudopkw/website')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('counter').textContent = data.value || '1';
-    })
-    .catch(error => {
+document.addEventListener('DOMContentLoaded', function() {
 
-        fetch('https://countapi.xyz/hit/sudopkw/visits')
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('counter').textContent = data.value;
-            })
-            .catch(error2 => {
-                document.getElementById('counter').textContent = 'Counter offline';
-            });
-    });
+    if (typeof(Storage) !== "undefined") {
+        let views = localStorage.getItem('pageViews');
+        if (views) {
+            views = parseInt(views) + 1;
+        } else {
+            views = 1;
+        }
+        localStorage.setItem('pageViews', views);
+        
+
+        const counterElement = document.getElementById('counter');
+        if (counterElement) {
+            counterElement.textContent = views;
+        }
+    }
+});
 </script>
                                 
                                     <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
