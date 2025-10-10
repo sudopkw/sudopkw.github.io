@@ -141,6 +141,21 @@
                         </div>
                     </div>
                 </div>
+                <!-- STATS WIDGET - Always visible -->
+                <div class="container" id="stats">
+                    <div class="container-content">
+                        <div class="title decorating-text">
+                            <p>Stats</p>
+                            <div></div>
+                        </div>
+                        <div class="ui-list">
+                            <div>
+                                <div>Unique Visitors:</div>
+                                <div><span class="text-pink" id="visitor-counter">Loading...</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="right-section">
                 <div class="container h-fill" id="main-content">
@@ -173,56 +188,14 @@
                                     <p>Here's also my <a href="https://www.tiktok.com/@whoamipkw/" target="_blank" class="text-pink">Tiktok</a>, Along with my <a href="https://stats.fm/pkw/" target="_blank" class="text-blue">Spoti-Stats</a>, So feel free to catch up on the Music i listen to!</p>
                                     <p>And finally, Here's my <a href="https://github.com/sudopkw/" target="_blank" class="text-pink">GitHub</a>.</p>
                                 </div>
-                                    <!-- Visitor Counter -->
-                                <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Fetching...</span></p>
-                                </div>
-    
-                                <div id="desktop-help">
-                               <!-- rest of your content... -->
-                                </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const counterElement = document.getElementById('counter');
-    if (!counterElement) return;
-    
-    // Your Vercel URL
-    const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
-    
-    // Track visitor and get count
-    fetch(API_URL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        }
-    })
-    .then(response => {
-        if (!response.ok) throw new Error('API error');
-        return response.json();
-    })
-    .then(data => {
-        if (data && data.count !== undefined) {
-            counterElement.textContent = data.count;
-        } else {
-            counterElement.textContent = 'Error';
-        }
-    })
-    .catch(error => {
-        console.log('Counter error:', error);
-        counterElement.textContent = 'Offline';
-    });
-});
-</script>
                                 
+                                <div id="desktop-help">
                                     <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
                                     <p>You can also <span class="text-orange">navigate</span> through the sections using the <span class="text-blue">arrow keys</span> or <span class="text-orange">Vim motions</span>.</p>
                                 </div>
                                 <p id="mobile-help">
                                     <span class="text-pink">Press</span> the menu button at the top-right of the screen to start <span class="text-orange">exploring</span> the website.
                                 </p>
-                                <!--  <div class="bible-verse"> -->
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -249,6 +222,37 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </footer>
     </div>
-</body>
 
+    <!-- Visitor Counter Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const counterElement = document.getElementById('visitor-counter');
+        if (!counterElement) return;
+        
+        const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
+        
+        fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('API error');
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.count !== undefined) {
+                counterElement.textContent = data.count;
+            } else {
+                counterElement.textContent = 'Error';
+            }
+        })
+        .catch(error => {
+            console.log('Counter error:', error);
+            counterElement.textContent = 'Offline';
+        });
+    });
+    </script>
+</body>
 </html>
