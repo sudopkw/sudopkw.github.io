@@ -20,6 +20,16 @@
       "snippet": "py"
     },
     {
+      "name": " SQL",
+      "content": [
+"SQL is the {{standard language}} used for {{managing and querying databases}}.",
+"I have been learning SQL for about {{a few months}} and I’m getting familiar with its {{syntax}} and {{data operations}}.",
+"I’ve used SQL to {{create tables}}, {{insert and update records}}, and {{query data}} from {{databases}}.",
+"I’m also exploring how SQL works with {{other languages}} like {{Python}} and {{JavaScript}} for {{backend and data analysis}} tasks."
+      ],
+      "snippet": "sql"
+    },
+    {
       "name": " Linux",
       "content": [
         "Linux is an {{operating system}} based on {{Unix}}.\nIt dominates the {{server}} space but is also the basis for the {{Android}} phone operating system.",
