@@ -35,7 +35,10 @@
         "If i will make my own website from scratch in the future, It will be {{heavily inspired}} from this one as i absolutely love {{TUI}}, and i'm amazed as something so awesome is able to be built."
       ],
       "technologies": [
-        "Python",
+        "SQL",
+        "JavaScript",
+        "HTML",
+        "CSS",
         "JSON"
       ]
     },
