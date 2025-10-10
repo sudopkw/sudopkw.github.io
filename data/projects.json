@@ -24,7 +24,7 @@
       ],
       "technologies": ["Python", "JSON", "Discord API"]
     },
-       {
+    {
       "name": "sudopkw.github.io",
       "year": 2025,
       "demoUrl": "none",
@@ -41,6 +41,6 @@
         "CSS",
         "JSON"
       ]
-    },
+    }
   ]
 }
