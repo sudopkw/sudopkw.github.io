@@ -151,7 +151,11 @@
                         <div class="ui-list">
                             <div>
                                 <div>Unique Visitors:</div>
-                                <div><span class="text-pink" id="visitor-counter">Loading...</span></div>
+                                <div><span class="text-pink" id="visitor-counter">Fetching...</span></div>
+                            </div>
+                            <div>
+                                <div>First-time Visitor:</div>
+                                <div><span class="text-orange" id="first-visit-status">Checking...</span></div>
                             </div>
                         </div>
                     </div>
@@ -227,31 +231,50 @@
     <script>
     document.addEventListener('DOMContentLoaded', function() {
         const counterElement = document.getElementById('visitor-counter');
-        if (!counterElement) return;
+        const visitStatusElement = document.getElementById('first-visit-status');
         
-        const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
-        
-        fetch(API_URL, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            }
-        })
-        .then(response => {
-            if (!response.ok) throw new Error('API error');
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.count !== undefined) {
-                counterElement.textContent = data.count;
+        // Check if this is first visit
+        if (typeof(Storage) !== "undefined") {
+            const hasVisited = localStorage.getItem('hasVisitedBefore');
+            
+            if (!hasVisited) {
+                // First time visitor
+                localStorage.setItem('hasVisitedBefore', 'true');
+                if (visitStatusElement) visitStatusElement.textContent = 'false';
             } else {
-                counterElement.textContent = 'Error';
+                // Returning visitor
+                if (visitStatusElement) visitStatusElement.textContent = 'true';
             }
-        })
-        .catch(error => {
-            console.log('Counter error:', error);
-            counterElement.textContent = 'Offline';
-        });
+        } else {
+            if (visitStatusElement) visitStatusElement.textContent = 'Unknown';
+        }
+        
+        // Get visitor count from API
+        if (counterElement) {
+            const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
+            
+            fetch(API_URL, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            })
+            .then(response => {
+                if (!response.ok) throw new Error('API error');
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.count !== undefined) {
+                    counterElement.textContent = data.count;
+                } else {
+                    counterElement.textContent = 'Error';
+                }
+            })
+            .catch(error => {
+                console.log('Counter error:', error);
+                counterElement.textContent = 'Offline';
+            });
+        }
     });
     </script>
 </body>
