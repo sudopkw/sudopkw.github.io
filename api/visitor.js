@@ -1,37 +1,36 @@
-let visitorCount = 0;
-const visitedIPs = new Set();
+import { Redis } from '@upstash/redis'; 
 
-export default function handler(req, res) {
+const redis = Redis.fromEnv();
+
+export default async function handler(req, res) {
 
   res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+  
 
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
-
-  const visitorIP = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
   
-  if (!visitedIPs.has(visitorIP)) {
+  try {
 
-    visitedIPs.add(visitorIP);
-    visitorCount++;
-    console.log(`New visitor: ${visitorIP}, Total: ${visitorCount}`);
-  }
+    const count = await redis.incr('visitor_count');
+    
+    console.log(`Visitor count incremented to: ${count}`);
+    
+    res.status(200).json({ 
+      count: count,
+      status: 'success' 
+    });
+    
+  } catch (error) {
+    console.error('Redis error:', error);
+    
 
-  if (req.method === 'GET') {
-    res.status(200).json({ 
-      count: visitorCount,
-      message: 'Visitor count retrieved'
+    res.status(500).json({ 
+      error: 'Counter temporarily offline',
+      count: 0
     });
-  } else if (req.method === 'POST') {
-    res.status(200).json({ 
-      count: visitorCount,
-      message: 'Visitor tracked'
-    });
-  } else {
-    res.status(405).json({ error: 'Method not allowed' });
   }
 }
