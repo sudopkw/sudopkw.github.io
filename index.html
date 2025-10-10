@@ -175,7 +175,7 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Fetching...</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">1</span></p>
                                 </div>
     
                                 <div id="desktop-help">
@@ -184,10 +184,33 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    // FreeVisitorCounter.com - tracks unique visitors by IP
-    const script = document.createElement('script');
-    script.src = 'https://freevisitorcounter.com/counter.php?page=sudopkw&style=0010';
-    document.head.appendChild(script);
+    if (typeof(Storage) !== "undefined") {
+        // Get or initialize the unique counter
+        let uniqueCount = localStorage.getItem('uniqueVisitorCount');
+        
+        // Check if this is a new session (browser restart)
+        const sessionVisited = sessionStorage.getItem('sessionVisited');
+        
+        if (!sessionVisited) {
+            // First visit in this browser session
+            sessionStorage.setItem('sessionVisited', 'true');
+            
+            if (!uniqueCount) {
+                // Very first visit ever
+                uniqueCount = 1;
+            } else {
+                // Returning visitor, but new session
+                uniqueCount = parseInt(uniqueCount) + 1;
+            }
+            
+            localStorage.setItem('uniqueVisitorCount', uniqueCount);
+        }
+        
+        const counterElement = document.getElementById('counter');
+        if (counterElement) {
+            counterElement.textContent = uniqueCount || '1';
+        }
+    }
 });
 </script>
                                 
