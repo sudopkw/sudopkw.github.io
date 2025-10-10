@@ -175,32 +175,32 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="visitCount">Loading...</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="visitCount">Fetching...</span></p>
                                 </div>
     
                                 <div id="desktop-help">
                                <!-- rest of your content... -->
                                 </div>
 
-                                <script>
-                                  async function updateVisitCounter() {
-                                  try {
-                                  const corsProxy = 'https://corsproxy.io/?';
-                                  const targetUrl = 'https://api.countopi.xyz/hit/sudopkw.github.io/visits';
-                
-                                  const response = await fetch(corsProxy + encodeURIComponent(targetUrl));
-                
-                                  if (response.ok) {
-                                      const data = await response.json();
-                                      
-                                      document.getElementById('visitCount').textContent = data.count;
-                                  }
-                              } catch (error) {
-                                  console.log('Visit counter loading...');
-                              }
-                          } 
-                                     updateVisitCounter();
-                                </script>
+<script>
+
+fetch('https://api.countapi.xyz/get/sudopkw/website')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('counter').textContent = data.value || '1';
+    })
+    .catch(error => {
+
+        fetch('https://countapi.xyz/hit/sudopkw/visits')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('counter').textContent = data.value;
+            })
+            .catch(error2 => {
+                document.getElementById('counter').textContent = 'Counter offline';
+            });
+    });
+</script>
                                 
                                     <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
                                     <p>You can also <span class="text-orange">navigate</span> through the sections using the <span class="text-blue">arrow keys</span> or <span class="text-orange">Vim motions</span>.</p>
