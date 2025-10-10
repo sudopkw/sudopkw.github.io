@@ -183,19 +183,49 @@
                                 </div>
 
 <script>
-fetch('https://visitor-badge.laobi.icu/badge?page_id=sudopkw.github.io')
-    .then(response => response.text())
-    .then(html => {
-        const match = html.match(/<text[^>]*>(\d+)<\/text>/);
-        if (match && match[1]) {
-            document.getElementById('counter').textContent = match[1];
+document.addEventListener('DOMContentLoaded', function() {
+    const counterElement = document.getElementById('counter');
+    if (!counterElement) return;
+    
+    // First, get the current counter value
+    fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter', {
+        headers: {
+            'Authorization': 'Bearer ut_0Qb5aLIGfRicjPyxq8KTFVdOl5EOG6H3eOaVAPpZ'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Failed to get counter value');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data && data.value !== undefined) {
+            counterElement.textContent = data.value;
+
+            if (!sessionStorage.getItem('counterIncremented')) {
+                fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter/up', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer YOUR_API_KEY_HERE'
+                    }
+                })
+                .then(() => {
+                    sessionStorage.setItem('counterIncremented', 'true');
+                })
+                .catch(error => {
+                    console.log('Failed to increment counter:', error);
+                });
+            }
         } else {
-            document.getElementById('counter').textContent = 'Error';
+            counterElement.textContent = 'API Error';
         }
     })
     .catch(error => {
-        document.getElementById('counter').textContent = 'Offline';
+        console.log('Counter API error:', error);
+        counterElement.textContent = 'Counter offline';
     });
+});
 </script>
                                 
                                     <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
