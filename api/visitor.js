@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     if (!alreadyCounted && currentVisitorId) {
       // First visit today - increment total and mark as counted
       count = await redis.incr('unique_visitors_total');
-      await redis.setex(key, 86400, '1'); // Expire in 24 hours
+      await redis.setex(key, '1'); 
       console.log(`New unique visitor: ${currentVisitorId}, total: ${count}`);
     } else {
       // Already counted today - just get current total
