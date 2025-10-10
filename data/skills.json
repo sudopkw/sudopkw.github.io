@@ -45,7 +45,8 @@
         "Linux is an {{operating system}} based on {{Unix}}.\nIt dominates the {{server}} space but is also the basis for the {{Android}} phone operating system.",
         "I have been using Linux for {{2-3 years}} and I am quite familiar with it.\nAlthough I've tried various flavors ({{distributions}}), I usually go back to {{Arch based}} distributions.",
         "Linux is a {{go-to}} tool for me and, by far, the best development environment I've used.\nIt is {{free}}, {{open-source}}, {{fast}}, {{stable}}, {{secure}}, {{customizable}} and {{extremely powerful}}.",
-        "I have Linux installed as my main OS on my Laptop, And if you're curious the Distro i'm currently running is OMARCHY. It's pretty new, And super easy to set up if you're lazy like me."
+        "I have {{Linux}} installed as my main OS on my Laptop, And if you're curious, the {{Distro}} i'm currently running is <a href=\"https://omarchy.org/\" target=\"_blank\" class=\"text-orange\">OMARCHY</a>.",
+        "{{OMARCHY}} is a {{Arch Linux}} based distro, Featuring {{Hyprland}} by default. Most of the GUI is replaced with {{TUI}} which i absolutely love, And it's a great distro for {{Developers}} and {{casual use}}, It's also developed by <a href=\"https://dhh.dk/\" target=\"_blank\" class=\"text-blue\">DHH</a>, so you know what's up."
       ],
       "snippet": null
     },
