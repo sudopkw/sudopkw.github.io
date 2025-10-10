@@ -183,35 +183,15 @@
                                 </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-    if (typeof(Storage) !== "undefined") {
-        // Get or initialize the unique counter
-        let uniqueCount = localStorage.getItem('uniqueVisitorCount');
-        
-        // Check if this is a new session (browser restart)
-        const sessionVisited = sessionStorage.getItem('sessionVisited');
-        
-        if (!sessionVisited) {
-            // First visit in this browser session
-            sessionStorage.setItem('sessionVisited', 'true');
-            
-            if (!uniqueCount) {
-                // Very first visit ever
-                uniqueCount = 1;
-            } else {
-                // Returning visitor, but new session
-                uniqueCount = parseInt(uniqueCount) + 1;
-            }
-            
-            localStorage.setItem('uniqueVisitorCount', uniqueCount);
-        }
-        
-        const counterElement = document.getElementById('counter');
-        if (counterElement) {
-            counterElement.textContent = uniqueCount || '1';
-        }
-    }
-});
+
+fetch('https://api.visitorbadge.io/api/visitors?path=sudopkw.github.io&count=unique')
+    .then(response => response.json())
+    .then(data => {
+        document.getElementById('counter').textContent = data.count || 'Error';
+    })
+    .catch(error => {
+        document.getElementById('counter').textContent = 'Offline';
+    });
 </script>
                                 
                                     <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
