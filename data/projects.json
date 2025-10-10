@@ -24,5 +24,20 @@
       ],
       "technologies": ["Python", "JSON", "Discord API"]
     }
+       {
+      "name": "sudopkw.github.io",
+      "year": 2025,
+      "demoUrl": "none",
+      "content": [
+        "Crazy, Right? {{This website}} is one of the projects i've taken on as a way to help understand {{SQL}}, {{HTML}}, and {{CSS}} better, Although {{i don't see a future}} where i will {{build websites}}, I feel as it was a nice way to learn something {{new}} and {{experience}} other languages :D",
+        "I will still be making changes, and {{updating}} this website, as i go on {{learning}} and {{exploring}} other languages. Hopefully, In the near future this website will be stacked with new projects, skills, and experiences :)",
+        "Thanks to {{Arthur Wallendorff}} for being so kind, and letting me and many others inspect, and use his <a href=\"https://github.com/zyriab/portfolio\" target=\"_blank\" class=\"text-pink\">WallenArt Github</a> as a {{project}} of thier own, to improve on thier {{skills}}, and learn more about {{building a website}}.",
+        "If i will make my own website from scratch in the future, It will be {{heavily inspired}} from this one as i absolutely love {{TUI}}, and i'm amazed as something so awesome is able to be built."
+      ],
+      "technologies": [
+        "Python",
+        "JSON"
+      ]
+    },
   ]
 }
