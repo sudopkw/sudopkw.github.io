@@ -157,6 +157,22 @@
                                 <div>First-time Visitor:</div>
                                 <div><span class="text-orange" id="first-visit-status">Checking...</span></div>
                             </div>
+                            <div>
+                                <div>Visit Count:</div>
+                                <div><span class="text-blue" id="visit-count">1</span></div>
+                            </div>
+                            <div>
+                                <div>Screen Size:</div>
+                                <div><span class="text-pink" id="screen-size">Loading...</span></div>
+                            </div>
+                            <div>
+                                <div>Operating System:</div>
+                                <div><span class="text-orange" id="os-type">Detecting...</span></div>
+                            </div>
+                            <div>
+                                <div>Favorite Section:</div>
+                                <div><span class="text-blue" id="favorite-section">None yet</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -232,21 +248,94 @@
     document.addEventListener('DOMContentLoaded', function() {
         const counterElement = document.getElementById('visitor-counter');
         const visitStatusElement = document.getElementById('first-visit-status');
+        const visitCountElement = document.getElementById('visit-count');
+        const screenSizeElement = document.getElementById('screen-size');
+        const osTypeElement = document.getElementById('os-type');
+        const favoriteSectionElement = document.getElementById('favorite-section');
         
-        // Check if this is first visit
+        // Track section clicks for favorite section
+        let sectionClicks = {
+            home: 0,
+            experience: 0,
+            projects: 0,
+            skills: 0,
+            stats: 0
+        };
+        
+        // Load previous data from localStorage
         if (typeof(Storage) !== "undefined") {
-            const hasVisited = localStorage.getItem('hasVisitedBefore');
+            // Visit count
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount = parseInt(visitCount) + 1;
+            localStorage.setItem('visitCount', visitCount);
+            if (visitCountElement) visitCountElement.textContent = visitCount;
             
+            // First visit status
+            const hasVisited = localStorage.getItem('hasVisitedBefore');
             if (!hasVisited) {
-                // First time visitor
                 localStorage.setItem('hasVisitedBefore', 'true');
                 if (visitStatusElement) visitStatusElement.textContent = 'true';
             } else {
-                // Returning visitor
                 if (visitStatusElement) visitStatusElement.textContent = 'false';
             }
+            
+            // Section clicks
+            const savedClicks = localStorage.getItem('sectionClicks');
+            if (savedClicks) {
+                sectionClicks = JSON.parse(savedClicks);
+                updateFavoriteSection();
+            }
+            
+            // Track section clicks
+            document.querySelectorAll('.container').forEach(section => {
+                section.addEventListener('click', function() {
+                    const sectionId = this.id;
+                    if (sectionClicks[sectionId] !== undefined) {
+                        sectionClicks[sectionId]++;
+                        localStorage.setItem('sectionClicks', JSON.stringify(sectionClicks));
+                        updateFavoriteSection();
+                    }
+                });
+            });
         } else {
             if (visitStatusElement) visitStatusElement.textContent = 'Unknown';
+            if (visitCountElement) visitCountElement.textContent = '1';
+        }
+        
+        // Update favorite section
+        function updateFavoriteSection() {
+            let maxClicks = 0;
+            let favorite = 'None yet';
+            
+            for (const [section, clicks] of Object.entries(sectionClicks)) {
+                if (clicks > maxClicks) {
+                    maxClicks = clicks;
+                    favorite = section.charAt(0).toUpperCase() + section.slice(1);
+                }
+            }
+            
+            if (favoriteSectionElement && maxClicks > 0) {
+                favoriteSectionElement.textContent = favorite;
+            }
+        }
+        
+        // Screen size detection
+        if (screenSizeElement) {
+            screenSizeElement.textContent = `${screen.width}x${screen.height}`;
+        }
+        
+        // OS detection
+        if (osTypeElement) {
+            const userAgent = navigator.userAgent;
+            let os = 'Unknown';
+            
+            if (userAgent.includes('Win')) os = 'Windows';
+            else if (userAgent.includes('Mac')) os = 'macOS';
+            else if (userAgent.includes('Linux')) os = 'Linux';
+            else if (userAgent.includes('Android')) os = 'Android';
+            else if (userAgent.includes('iOS') || userAgent.includes('iPhone') || userAgent.includes('iPad')) os = 'iOS';
+            
+            osTypeElement.textContent = os;
         }
         
         // Get visitor count from API
