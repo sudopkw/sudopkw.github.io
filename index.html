@@ -240,10 +240,10 @@
             if (!hasVisited) {
                 // First time visitor
                 localStorage.setItem('hasVisitedBefore', 'true');
-                if (visitStatusElement) visitStatusElement.textContent = 'false';
+                if (visitStatusElement) visitStatusElement.textContent = 'true';
             } else {
                 // Returning visitor
-                if (visitStatusElement) visitStatusElement.textContent = 'true';
+                if (visitStatusElement) visitStatusElement.textContent = 'false';
             }
         } else {
             if (visitStatusElement) visitStatusElement.textContent = 'Unknown';
