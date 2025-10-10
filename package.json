@@ -1,7 +1,3 @@
-{
-  "name": "visitor-counter",
-  "version": "1.0.0",
-  "scripts": {
-    "dev": "vercel dev"
-  }
+"dependencies": {
+  "@upstash/redis": "^1.22.0"
 }
