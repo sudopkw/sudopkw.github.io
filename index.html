@@ -187,10 +187,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const counterElement = document.getElementById('counter');
     if (!counterElement) return;
     
+    const API_KEY = 'ut_0Qb5aLIGfRicjPyxq8KTFVdOl5EOG6H3eOaVAPpZ';
+    
     // First, get the current counter value
     fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter', {
         headers: {
-            'Authorization': 'Bearer ut_0Qb5aLIGfRicjPyxq8KTFVdOl5EOG6H3eOaVAPpZ'
+            'Authorization': 'Bearer ' + API_KEY
         }
     })
     .then(response => {
@@ -203,11 +205,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (data && data.value !== undefined) {
             counterElement.textContent = data.value;
 
+            // Then increment if this is a new session
             if (!sessionStorage.getItem('counterIncremented')) {
                 fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter/up', {
                     method: 'POST',
                     headers: {
-                        'Authorization': 'Bearer ut_0Qb5aLIGfRicjPyxq8KTFVdOl5EOG6H3eOaVAPpZ'
+                        'Authorization': 'Bearer ' + API_KEY
                     }
                 })
                 .then(() => {
