@@ -175,7 +175,7 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Yes</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Fetching...</span></p>
                                 </div>
     
                                 <div id="desktop-help">
@@ -184,18 +184,10 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    if (typeof(Storage) !== "undefined") {
-        const hasVisited = localStorage.getItem('hasVisited');
-        const counterElement = document.getElementById('counter');
-        
-        if (!hasVisited) {
-            
-            localStorage.setItem('hasVisited', 'true');
-            if (counterElement) counterElement.textContent = 'No';
-        } else {
-            if (counterElement) counterElement.textContent = 'Yes';
-        }
-    }
+    // FreeVisitorCounter.com - tracks unique visitors by IP
+    const script = document.createElement('script');
+    script.src = 'https://freevisitorcounter.com/counter.php?page=sudopkw&style=0010';
+    document.head.appendChild(script);
 });
 </script>
                                 
