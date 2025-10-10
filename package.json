@@ -1,4 +1,7 @@
-"dependencies": {
-  "@upstash/redis": "^1.22.0"
+{
+  "name": "sudopkw-website",
+  "version": "1.0.0",
+  "dependencies": {
+    "@upstash/redis": "^1.22.0"
+  }
 }
- 
