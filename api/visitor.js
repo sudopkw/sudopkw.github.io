@@ -29,19 +29,18 @@ export default async function handler(req, res) {
     }
     
     const currentVisitorId = visitorId || newVisitorId;
-    const today = new Date().toISOString().split('T')[0]; // YYYY-MM-DD
-    const key = `visitor:${currentVisitorId}:${today}`;
+    const key = `visitor:${currentVisitorId}`; // No date - permanent!
     
     const alreadyCounted = await redis.get(key);
     
     let count;
     if (!alreadyCounted && currentVisitorId) {
-      // First visit today - increment total and mark as counted
+      // First visit EVER - increment total and mark as counted FOREVER
       count = await redis.incr('unique_visitors_total');
-      await redis.setex(key, '1'); 
+      await redis.set(key, '1'); // No expiration - permanent!
       console.log(`New unique visitor: ${currentVisitorId}, total: ${count}`);
     } else {
-      // Already counted today - just get current total
+      // Already counted - just get current total
       count = await redis.get('unique_visitors_total') || 0;
       count = parseInt(count);
       console.log(`Returning visitor: ${currentVisitorId}, total: ${count}`);
@@ -54,7 +53,7 @@ export default async function handler(req, res) {
       isNew: !alreadyCounted
     };
     
-    // Set visitor cookie for new visitors
+    // Set visitor cookie for new visitors (30 days)
     if (newVisitorId) {
       res.setHeader('Set-Cookie', 
         `visitor_id=${newVisitorId}; Max-Age=2592000; Path=/; SameSite=None; Secure`
