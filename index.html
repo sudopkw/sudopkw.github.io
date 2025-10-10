@@ -344,11 +344,12 @@
             const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
             
             fetch(API_URL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                }
-            })
+             method: 'POST',
+               headers: {
+                 'Content-Type': 'application/json',
+               },
+               credentials: 'include'  // ← This sends cookies with the request
+             })
             .then(response => {
                 if (!response.ok) throw new Error('API error');
                 return response.json();
