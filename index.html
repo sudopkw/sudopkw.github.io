@@ -175,7 +175,7 @@
                                 </div>
                                     <!-- Visitor Counter -->
                                 <div id="visitor-counter">
-                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">1</span></p>
+                                     <p><span class="text-pink">Unique Visitors:</span> <span id="counter">Fetching...</span></p>
                                 </div>
     
                                 <div id="desktop-help">
@@ -187,46 +187,30 @@ document.addEventListener('DOMContentLoaded', function() {
     const counterElement = document.getElementById('counter');
     if (!counterElement) return;
     
-    const API_KEY = 'ut_0Qb5aLIGfRicjPyxq8KTFVdOl5EOG6H3eOaVAPpZ';
+    // Your Vercel URL
+    const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
     
-    // First, get the current counter value
-    fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter', {
+    // Track visitor and get count
+    fetch(API_URL, {
+        method: 'POST',
         headers: {
-            'Authorization': 'Bearer ' + API_KEY
+            'Content-Type': 'application/json',
         }
     })
     .then(response => {
-        if (!response.ok) {
-            throw new Error('Failed to get counter value');
-        }
+        if (!response.ok) throw new Error('API error');
         return response.json();
     })
     .then(data => {
-        if (data && data.value !== undefined) {
-            counterElement.textContent = data.value;
-
-            // Then increment if this is a new session
-            if (!sessionStorage.getItem('counterIncremented')) {
-                fetch('https://api.counterapi.dev/v2/sudopkw/page-view-counter/up', {
-                    method: 'POST',
-                    headers: {
-                        'Authorization': 'Bearer ' + API_KEY
-                    }
-                })
-                .then(() => {
-                    sessionStorage.setItem('counterIncremented', 'true');
-                })
-                .catch(error => {
-                    console.log('Failed to increment counter:', error);
-                });
-            }
+        if (data && data.count !== undefined) {
+            counterElement.textContent = data.count;
         } else {
-            counterElement.textContent = 'API Error';
+            counterElement.textContent = 'Error';
         }
     })
     .catch(error => {
-        console.log('Counter API error:', error);
-        counterElement.textContent = 'Counter offline';
+        console.log('Counter error:', error);
+        counterElement.textContent = 'Offline';
     });
 });
 </script>
