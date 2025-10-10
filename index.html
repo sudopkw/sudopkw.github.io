@@ -183,11 +183,15 @@
                                 </div>
 
 <script>
-
-fetch('https://api.visitorbadge.io/api/visitors?path=sudopkw.github.io&count=unique')
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById('counter').textContent = data.count || 'Error';
+fetch('https://visitor-badge.laobi.icu/badge?page_id=sudopkw.github.io')
+    .then(response => response.text())
+    .then(html => {
+        const match = html.match(/<text[^>]*>(\d+)<\/text>/);
+        if (match && match[1]) {
+            document.getElementById('counter').textContent = match[1];
+        } else {
+            document.getElementById('counter').textContent = 'Error';
+        }
     })
     .catch(error => {
         document.getElementById('counter').textContent = 'Offline';
