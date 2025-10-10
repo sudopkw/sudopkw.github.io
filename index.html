@@ -151,7 +151,7 @@
                         <div class="ui-list">
                             <div>
                                 <div>Unique Visitors:</div>
-                                <div><span class="text-pink" id="visitor-counter">Fetching...</span></div>
+                                <div><span class="text-pink" id="visitor-counter">Loading...</span></div>
                             </div>
                             <div>
                                 <div>First-time Visitor:</div>
@@ -243,9 +243,10 @@
         </footer>
     </div>
 
-    <!-- Visitor Counter Script -->
+    <!-- Combined Stats Script -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        // Initialize all elements
         const counterElement = document.getElementById('visitor-counter');
         const visitStatusElement = document.getElementById('first-visit-status');
         const visitCountElement = document.getElementById('visit-count');
@@ -338,7 +339,7 @@
             osTypeElement.textContent = os;
         }
         
-        // Get visitor count from API
+        // Get visitor count from API (using the working simple approach)
         if (counterElement) {
             const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
             
