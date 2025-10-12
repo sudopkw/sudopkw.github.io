@@ -3,8 +3,16 @@ import { Redis } from '@upstash/redis';
 const redis = Redis.fromEnv();
 
 export default async function handler(req, res) {
-  // Set CORS headers
-  res.setHeader('Access-Control-Allow-Origin', 'https://sudopkw.github.io');
+  // Set CORS headers - FIXED LINE BELOW
+  const allowedOrigins = ['https://sudopkw.github.io', 'https://sudopkw.dev', 'https://www.sudopkw.dev'];
+  const origin = req.headers.origin;
+  
+  if (allowedOrigins.includes(origin)) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://sudopkw.dev');
+  }
+  
   res.setHeader('Access-Control-Allow-Methods', 'POST, GET, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Cookie');
   res.setHeader('Access-Control-Allow-Credentials', 'true');
@@ -15,6 +23,7 @@ export default async function handler(req, res) {
   }
   
   try {
+    // ... rest of your existing code remains the same ...
     // Get visitor ID from cookie header
     const cookieHeader = req.headers.cookie || '';
     const cookies = Object.fromEntries(
