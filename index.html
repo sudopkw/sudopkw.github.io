@@ -348,7 +348,7 @@
                headers: {
                  'Content-Type': 'application/json',
                },
-              // credentials: 'include'  // ← This sends cookies with the request
+              credentials: 'include'  // ← This sends cookies with the request
              })
             .then(response => {
                 if (!response.ok) throw new Error('API error');
