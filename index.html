@@ -186,32 +186,31 @@
                         <div class="outer-paragraph-container">
                             <div class="inner-paragraph-container">
                                 <div>
-                                    <p>Hiya, I'm <span class="text-blue">sudopkw</span></p>
-                                    <p>Mainly a <span class="text-orange">Coder</span> and <span class="text-orange">Gamer</span>.</p>
+                                    <p>Hiya, I'm <span class="text-blue">sudopkw</span> - or just sudo, if you're in a hurry.</p>
+                                    <p>Mainly a <span class="text-orange">Coder</span> and <span class="text-orange">Gamer</span>, wired into both worlds.</p>
                                 </div>
                                 <div>
-                                    <p>Although i rarely do code nowadays, Most of my focus goes to <span class="text-pink">Lua</span>, As i explore other programming languages such as <span class="text-pink">C++</span>, <span class="text-pink">JavaScript</span> and more.</p>
-                                    <p>I also do enjoy programming in almost beginner-like languages such as <span class="text-pink">Python</span>, and will go ahead and learn <span class="text-pink">C</span> in the near future for some fun projects of my own, that will mostly result in a chaotic fail.</p>
+                                    <p>I don’t code as much these days, but when I do, I’m usually deep inside <span class="text-pink">Lua</span> - exploring and breaking things just to see how they tick.</p>
+                                    <p>I occasionally wander into <span class="text-pink">C++</span>, <span class="text-pink">JavaScript</span>, and a few other languages that catch my eye.</p>
+                                    <p><span class="text-pink">Python</span> still gets some love from me, though I plan to dive into <span class="text-pink">C</span> soon for some chaotic side projects that'll probably explode... but hey, that's half the fun.</p>
                                 </div>
                                 <div>
-                                    <p>I'd also like to advance to the real world, Tinkering with electronics, Exploring gadgets like <span class="text-orange">WiFi Deauthers</span>, As i find it interesting on how real world hacking works.</p>
-                                    <p>I'm hoping to have some free time and courage in the near future to learn more about how things work, As it's what im passionate about and it's quite sad that i haven't been focused on it as much recently.</p>
+                                    <p>I’m also itching to tinker more with real-world tech - cracking open gadgets, poking at <span class="text-orange">WiFi Deauthers</span>, and just generally seeing how far down the rabbit hole goes.</p>
+                                    <p>With a bit of free time (and maybe a shot of courage), I’ll get back to learning the deeper layers of how things really work - that’s the stuff that fuels me.</p>
                                 </div>
                                 <div>
-                                    <p>This entire website is also a learning experience to me, As i inspect the code and try to get an understanding of how <span class="text-pink">JSON</span> and <span class="text-pink">JavaScript</span> work.</p>
-                                    <p>And it is also totally not because i love <span class="text-orange">TUI</span>, And i totally didn't choose this project on porpuse because of said not-reason.</p>
-                                    <p>Here, You can check out some of my links. They're not related to any of my real work, However i will link my <span class="text-pink">Github</span> down below.</p>
+                                    <p>This whole site is part of my learning sandbox - inspecting the code, reverse-engineering how <span class="text-pink">JSON</span> and <span class="text-pink">JavaScript</span> dance together.</p>
+                                    <p>Totally not because I’ve got a thing for <span class="text-orange">TUI</span> setups... nope, definitely not that. ;)</p>
+                                    <p>Anyway, here’s a few links if you’re curious - nothing serious, just a few windows into my world. My <span class="text-pink">GitHub</span>’s down there too.</p>
                                 </div>
                                 <div>
-                                    <p>So, As i mentioned i am a <span class="text-orange">Gamer</span> ! , So if you feel like it, Check out my <a href="https://steamcommunity.com/id/sudopkw/" target="_blank" class="text-blue">Steam</a>.</p>
-                                    <p>If you'd like to add me as a friend, Or leave a comment in my steam wall, Feel free to do so.</p>
-                                    <p>Here's also my <a href="https://www.tiktok.com/@whoamipkw/" target="_blank" class="text-pink">Tiktok</a>, Along with my <a href="https://stats.fm/pkw/" target="_blank" class="text-blue">Spoti-Stats</a>, So feel free to catch up on the Music i listen to!</p>
-                                    <p>And finally, Here's my <a href="https://github.com/sudopkw/" target="_blank" class="text-pink">GitHub</a>.</p>
+                                    <p>Yup, I’m a <span class="text-orange">Gamer</span> too. Feel free to swing by my <a href="https://steamcommunity.com/id/sudopkw/" target="_blank" class="text-blue">Steam</a> if you wanna add me or drop a comment on my wall.</p>
+                                    <p>You can also peek at my <a href="https://www.tiktok.com/@whoamipkw/" target="_blank" class="text-pink">TikTok</a> or check out what I’m vibing to on <a href="https://stats.fm/pkw/" target="_blank" class="text-blue">Spoti-Stats</a>.</p>
+                                    <p>And of course, my code lair - <a href="https://github.com/sudopkw/" target="_blank" class="text-pink">GitHub</a>.</p>
                                 </div>
-                                
                                 <div id="desktop-help">
-                                    <p><span class="text-pink">Click</span> on a section on the left to learn more about my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
-                                    <p>You can also <span class="text-orange">navigate</span> through the sections using the <span class="text-blue">arrow keys</span> or <span class="text-orange">Vim motions</span>.</p>
+                                    <p><span class="text-pink">Click</span> a section on the left to dig into my <span class="text-blue">work</span> and past <span class="text-orange">experiences</span>.</p>
+                                    <p>You can also <span class="text-orange">navigate</span> with the <span class="text-blue">arrow keys</span> - or <span class="text-orange">Vim motions</span>, if you’re one of us. <span class="text-blue">B)</span></p>
                                 </div>
                                 <p id="mobile-help">
                                     <span class="text-pink">Press</span> the menu button at the top-right of the screen to start <span class="text-orange">exploring</span> the website.
@@ -265,13 +264,11 @@
         
         // Load previous data from localStorage
         if (typeof(Storage) !== "undefined") {
-            // Visit count
             let visitCount = localStorage.getItem('visitCount') || 0;
             visitCount = parseInt(visitCount) + 1;
             localStorage.setItem('visitCount', visitCount);
             if (visitCountElement) visitCountElement.textContent = visitCount;
             
-            // First visit status
             const hasVisited = localStorage.getItem('hasVisitedBefore');
             if (!hasVisited) {
                 localStorage.setItem('hasVisitedBefore', 'true');
@@ -280,14 +277,12 @@
                 if (visitStatusElement) visitStatusElement.textContent = 'false';
             }
             
-            // Section clicks
             const savedClicks = localStorage.getItem('sectionClicks');
             if (savedClicks) {
                 sectionClicks = JSON.parse(savedClicks);
                 updateFavoriteSection();
             }
             
-            // Track section clicks
             document.querySelectorAll('.container').forEach(section => {
                 section.addEventListener('click', function() {
                     const sectionId = this.id;
@@ -303,7 +298,6 @@
             if (visitCountElement) visitCountElement.textContent = '1';
         }
         
-        // Update favorite section
         function updateFavoriteSection() {
             let maxClicks = 0;
             let favorite = 'None yet';
@@ -320,12 +314,10 @@
             }
         }
         
-        // Screen size detection
         if (screenSizeElement) {
             screenSizeElement.textContent = `${screen.width}x${screen.height}`;
         }
         
-        // OS detection
         if (osTypeElement) {
             const userAgent = navigator.userAgent;
             let os = 'Unknown';
@@ -339,7 +331,6 @@
             osTypeElement.textContent = os;
         }
         
-        // Get visitor count from API (using Redis - no more resets!)
         if (counterElement) {
             const API_URL = 'https://sudopkw-github-io.vercel.app/api/visitor';
             
@@ -348,7 +339,7 @@
                headers: {
                  'Content-Type': 'application/json',
                },
-              credentials: 'include'  // ← This sends cookies with the request
+              credentials: 'include'
              })
             .then(response => {
                 if (!response.ok) throw new Error('API error');
