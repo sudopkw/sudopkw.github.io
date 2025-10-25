@@ -6,21 +6,18 @@
       "year": 2025,
       "demoUrl": "none",
       "content": [
-        "A meh, pretty much {{useless multi-tool}} that mostly just opens {{web pages}} to things i would need, along with a DDoS tool that {{probably even doesn't work}} because ooh, So kewl.",
-        "This is also {{unfinished}}, so some things aren't even coded. {{I gave up this project because i got bored of it}} and wanted to stir away from {{Python.}}"
+        "A meh, {{mostly useless multi-tool}} that just opens a bunch of {{web pages}} I use - plus a DDoS tool that {{probably doesn’t even work}} because, y’know, cool factor.",
+        "The project’s {{unfinished}}, and a bunch of features aren’t even coded. I {{gave it up}} because I got bored and wanted to step away from {{Python}} for a while."
       ],
-      "technologies": [
-        "Python",
-        "JSON"
-      ]
+      "technologies": ["Python", "JSON"]
     },
     {
       "name": "Discord Self-Bot",
       "year": 2023,
       "demoUrl": "https://github.com/sudopkw/Alt-Bot",
       "content": [
-        "Used for fun, Now {{broken}} and the only way for fixing it is to {{recode it}} and make it an actual {{Discord BOT}}. Which i have done, But {{lost the files}}. So sucks to be me i guess.",
-        "This project is long gone, And i will most likely never make another one, ecsdi."
+        "A fun little {{Discord self-bot}} I built - now completely {{broken}}, and the only fix would be to {{recode it}} into a proper {{Discord Bot}}.",
+        "I actually did that once, but... I {{lost the files}}. Classic me. So yeah, this project’s dead and buried - probably won’t make another one, ecsdi."
       ],
       "technologies": ["Python", "JSON", "Discord API"]
     },
@@ -29,18 +26,13 @@
       "year": 2025,
       "demoUrl": "https://github.com/sudopkw/sudopkw.github.io",
       "content": [
-        "Crazy, Right? {{This website}} is one of the projects i've taken on as a way to help understand {{SQL}}, {{HTML}}, and {{CSS}} better, Although {{i don't see a future}} where i will {{build websites}}, I feel as it was a nice way to learn something {{new}} and {{experience}} other languages :D",
-        "I will still be making changes, and {{updating}} this website, as i go on {{learning}} and {{exploring}} other languages. Hopefully, In the near future this website will be stacked with new projects, skills, and experiences :)",
-        "Thanks to {{Arthur Wallendorff}} for being so kind, and letting me and many others inspect, and use his <a href=\"https://github.com/zyriab/portfolio\" target=\"_blank\" class=\"text-pink\">WallenArt Github</a> as a {{project}} of thier own, to improve on thier {{skills}}, and learn more about {{building a website}}.",
-        "If i will make my own website from scratch in the future, It will be {{heavily inspired}} from this one as i absolutely love {{TUI}}, and i'm amazed as something so awesome is able to be built."
+        "Wild, right? {{This website}} itself is one of my projects - built as a way to understand {{SQL}}, {{HTML}}, and {{CSS}} better.",
+        "I don’t really see myself going into full web dev, but it was a {{fun experiment}} to {{learn something new}} and {{explore other languages}} :D",
+        "I’ll keep {{updating}} this site as I {{learn}} more and {{grow}} in other areas. Hopefully, it’ll be stacked with new projects and experiences soon :)",
+        "Also, Big thanks to {{Arthur Wallendorff}} for letting people (including me) use and modify his <a href=\"https://github.com/zyriab/portfolio\" target=\"_blank\" class=\"text-pink\">WallenArt GitHub</a> as a base to {{learn}} and {{improve skills}}.",
+        "If I ever make my own site from scratch, it’ll be {{heavily inspired}} by this one. I’m obsessed with {{TUI}} design - can’t believe something so sleek exists."
       ],
-      "technologies": [
-        "SQL",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "JSON"
-      ]
+      "technologies": ["SQL", "JavaScript", "HTML", "CSS", "JSON"]
     }
   ]
 }
