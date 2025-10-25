@@ -173,6 +173,15 @@
                                 <div>Favorite Section:</div>
                                 <div><span class="text-blue" id="favorite-section">None yet</span></div>
                             </div>
+                            <!-- NEW STATS -->
+                            <div>
+                                <div>Daily Tip:</div>
+                                <div><span class="text-pink" id="daily-tip">Loading...</span></div>
+                            </div>
+                            <div>
+                                <div>Fun Stat:</div>
+                                <div><span class="text-orange" id="fun-stat">Loading...</span></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -258,6 +267,8 @@
         const screenSizeElement = document.getElementById('screen-size');
         const osTypeElement = document.getElementById('os-type');
         const favoriteSectionElement = document.getElementById('favorite-section');
+        const tipElement = document.getElementById('daily-tip');
+        const funElement = document.getElementById('fun-stat');
         
         // Track section clicks for favorite section
         let sectionClicks = {
@@ -363,6 +374,27 @@
                 counterElement.textContent = 'Offline';
             });
         }
+
+        const dailyTips = [
+            "Remember to take breaks while coding!",
+            "Try learning one new Lua function today.",
+            "Don't forget to publish your code additions!",
+            "Explore a new tech, even if just for funsies.",
+            "Always check your syntax. Did my mistake plenty of times",
+            "Remember, We all start somewhere. This is your time to start learning coding!",
+            "What do we think of vibe-coding chat?",
+            "Document your code, future-you will thank you."
+        ];
+        const funStats = [
+            "You've clicked your favorite section this many times!",
+            "Ever consider trying Arch Linux? ( i use arch btw )",
+            "Your browser is probably cooler than mine.",
+            "Wowie!~ This website is so kewl!11!11!!",
+            "Did you know? Ctrl+C/Ctrl+V is magical."
+        ];
+
+        if(tipElement) tipElement.textContent = dailyTips[Math.floor(Math.random()*dailyTips.length)];
+        if(funElement) funElement.textContent = funStats[Math.floor(Math.random()*funStats.length)];
     });
     </script>
 </body>
