@@ -3,67 +3,70 @@
     {
       "name": "λ Lua",
       "content": [
-    "Lua is the {{lightweight}} {{scripting language}} of choice for many {{game engines}} and {{embedded systems}}.",
-    "I have been using Lua for over {{6 years}} and I am pretty familiar with it. I have used it to build {{games}}, {{automation scripts}}, and even {{animation scripts}}",
-    "I have used Lua to create {{unfair game advantage exploits}}, {{server scripts within a game}}.",
-    "I have also used Lua to develop {{projects}} for {{hobbyists}}, {{startups}}, {{game creators}}."
+        "Lua is a {{lightweight scripting language}} often used in {{game engines}} and {{embedded systems}}.",
+        "I’ve been using Lua for over {{6 years}}, mainly for {{games}}, {{automation}}, and {{animation scripts}}.",
+        "It’s also what I used to create {{game exploits}} and {{server-side scripts}} (yeah, the fun kind).",
+        "I’ve built Lua projects for {{hobbyists}}, {{indie devs}}, and {{friends}} just experimenting around."
       ],
       "snippet": "lua"
     },
-     {
+    {
       "name": " Python",
       "content": [
-    "Python is the {{versatile}} {{programming language}} of choice for many {{web developers}} and {{data scientists}}.",
-    "I have been using Python for about {{2 years}} and I am familiar with it. I have used it to build {{various tools}}, {{automation scripts}}, {{generating scripts}}, and even {{bots}}",
-    "I have also used Python to develop {{projects}} for me and some of my friends."
+        "Python’s a {{versatile language}} that powers {{web dev}}, {{automation}}, and {{data science}}.",
+        "I’ve been using it for about {{2 years}}, making {{tools}}, {{bots}}, and various {{scripts}}.",
+        "It’s also my go-to for {{quick experiments}} or {{fun personal projects}} with friends."
       ],
       "snippet": "py"
     },
     {
       "name": " SQL",
       "content": [
-"SQL is the {{standard language}} used for {{managing and querying databases}}.",
-"I have been learning SQL for about {{a few months}} and I’m getting familiar with its {{syntax}} and {{data operations}}.",
-"I’ve used SQL to {{create tables}}, {{insert and update records}}, and {{query data}} from {{databases}}.",
-"I’m also exploring how SQL works with {{other languages}} like {{Python}} and {{JavaScript}} for {{backend and data analysis}} tasks."
+        "SQL is the {{standard language}} for {{managing and querying databases}}.",
+        "I’ve been learning SQL for a few months and getting comfortable with its {{syntax}} and {{data operations}}.",
+        "I’ve used it to {{create tables}}, {{update records}}, and {{query data}} across {{databases}}.",
+        "I’m also exploring how it works alongside {{Python}} and {{JavaScript}} in {{backend and data analysis}} work."
       ],
       "snippet": "sql"
     },
     {
       "name": " JavaScript",
       "content": [
-"JavaScript is the {{core language}} of the {{web}}, used to create {{interactive and dynamic websites}}.",
-"I took an existing {{website repository}} and turned it into a {{learning project}} to understand how {{JavaScript}} works in {{real-world web development}}.",
-"Through this project, I’ve been exploring {{DOM manipulation}}, {{event handling}}, and {{basic logic}} in JavaScript.",
-"It’s been a great way to see how code connects {{frontend behavior}} with {{user interaction}}."
+        "JavaScript is the {{core language}} of the {{web}}, powering {{dynamic and interactive websites}}.",
+        "I forked a {{website repository}} to turn it into a {{learning project}} and see how {{JavaScript}} works in {{real-world development}}.",
+        "It’s been a great hands-on way to learn {{DOM manipulation}}, {{event handling}}, and {{frontend logic}}.",
+        "I love seeing how code ties {{user interaction}} and {{frontend behavior}} together."
       ],
       "snippet": "js"
     },
     {
       "name": " Linux",
       "content": [
-        "Linux is an {{operating system}} based on {{Unix}}.\nIt dominates the {{server}} space but is also the basis for the {{Android}} phone operating system.",
-        "I have been using Linux for {{2-3 years}} and I am quite familiar with it.\nAlthough I've tried various flavors ({{distributions}}), I usually go back to {{Arch based}} distributions.",
-        "Linux is a {{go-to}} tool for me and, by far, the best development environment I've used.\nIt is {{free}}, {{open-source}}, {{fast}}, {{stable}}, {{secure}}, {{customizable}} and {{extremely powerful}}.",
-        "I have {{Linux}} installed as my main OS on my Laptop, And if you're curious, the {{Distro}} i'm currently running is <a href=\"https://omarchy.org/\" target=\"_blank\" class=\"text-orange\">OMARCHY</a>.",
-        "{{OMARCHY}} is a {{Arch Linux}} based distro, Featuring {{Hyprland}} by default. Most of the GUI is replaced with {{TUI}} which i absolutely love, And it's a great distro for {{Developers}} and {{casual use}}, It's also developed by <a href=\"https://dhh.dk/\" target=\"_blank\" class=\"text-blue\">DHH</a>, so you know what's up."
+        "Linux is an {{open-source OS}} based on {{Unix}} — the backbone of most {{servers}} and the heart of {{Android}}.",
+        "I’ve been using Linux for {{2–3 years}} and feel right at home with it. Tried lots of {{distros}}, but I always return to {{Arch-based}} ones.",
+        "It’s {{free}}, {{stable}}, {{customizable}}, and {{powerful}} — easily my favorite {{development environment}}.",
+        "I run {{Linux}} as my daily driver. If you’re curious, I’m currently using <a href=\"https://omarchy.org/\" target=\"_blank\" class=\"text-orange\">OMARCHY</a>, an {{Arch-based distro}} with {{Hyprland}} by default and tons of {{TUI elements}}.",
+        "It’s made by <a href=\"https://dhh.dk/\" target=\"_blank\" class=\"text-blue\">DHH</a>, so you know it’s built right."
       ],
       "snippet": null
     },
     {
       "name": "󰢚 Human Languages",
       "content": [
-        "Crazy, Right? I just thought this was so silly i had to keep it in here.",
-        "I am fluent in {{English}} (Could never tell), {{Croatian}}, And i am able to read and write in {{Cyrillic Script}}. This is because i studied a little bit of {{Russian}}, And i'm at a point where i can understand it pretty well, Buuuut.... I Can't speak it. Lmao."
+        "Yeah, I kept this one in here because it’s too funny not to.",
+        "I’m fluent in {{English}} (shocker), {{Croatian}}, and can read/write in {{Cyrillic Script}}.",
+        "I studied a bit of {{Russian}}, and while I can understand it decently... speaking it? Yeah, not happening. Lmao."
       ],
       "snippet": null
     },
     {
       "name": " Neovim",
       "content": [
-        "Neovim is a {{text editor}} based on Vim, it is {{keyboard-centric}}, meaning that it was designed around keyboard navigation and supports multiple modes, making it possible to move around the text with the {{keyboard keys}} ({{Normal}} mode) before selecting ({{Visual}} mode) or writing ({{Insert}} mode).\nNeovim brings a whole deal of {{customizability}} through {{Lua}} scripting as well as a lot of community-made extensions.",
-        "I have started using it in the middle of {{2023}} and have still a lot to {{learn}} about it, like {{buffers}} and power-user {{navigation}} but I use it for {{everything}} and feel at home when using it.\nI even wrote an extension to allow better use of the debugger with {{npm}}.",
-        "(It's also a {{flex}} on other programmers)."
+        "Neovim is a {{keyboard-driven text editor}} built off Vim, supporting {{multiple modes}} like {{Normal}}, {{Visual}}, and {{Insert}}.",
+        "It’s insanely {{customizable}} with {{Lua scripting}} and has a massive community making extensions.",
+        "I started using it in mid {{2023}} and still have lots to {{learn}} — {{buffers}}, {{navigation}}, and more.",
+        "But I use it for {{everything}} now, and I feel right at home in it. I even wrote a small extension for better {{npm debugging}}.",
+        "(Also, yeah — it’s a total {{flex}} on other devs.)"
       ],
       "snippet": null
     }
