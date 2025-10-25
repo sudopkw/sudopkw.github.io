@@ -1,7 +1,7 @@
 {
   "data": [
     {
-      "name": "PKW.FUN",
+      "name": "PKW.FUN", 
       "images": ["../images/image.png"],
       "year": 2025,
       "demoUrl": "none",
