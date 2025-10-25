@@ -2,41 +2,41 @@
   "data": [
     {
       "content": [
-        "Hiya, I'm {{sudopkw}}",
-        "Mainly a {{Coder}} and {{Gamer}}."
+        "Hiya, I'm {{sudopkw}} - or just sudo or pkw, if you're in a hurry.",
+        "Mainly a {{Coder}} and {{Gamer}}, wired into both worlds."
       ]
     },
     {
       "content": [
-        "Although i rarely do code nowadays, Most of my focus goes to {{Lua}}, As i explore other programming languages such as {{C++}}, {{JavaScript}} and more.",
-        "I also do enjoy programming in almost beginner-like languages such as {{Python}}, and will go ahead and learn {{C}} in the near future for some fun projects of my own, that will mostly result in a chaotic fail."
+        "I don’t code as much these days, but when I do, I’m usually deep inside {{Lua}} - exploring and breaking things just to see how they tick.",
+        "I occasionally wander into {{C++}}, {{JavaScript}}, and a few other languages that catch my eye.",
+        "{{Python}} still gets some love from me, though I plan to dive into {{C}} soon for some chaotic side projects that’ll probably explode... but hey, that’s half the fun."
       ]
     },
     {
       "content": [
-        "I'd also like to advance to the real world, Tinkering with electronics, Exploring gadgets like {{WiFi Deauthers}}, As i find it interesting on how real world hacking works.",
-        "I'm hoping to have some free time and courage in the near future to learn more about how things work, As it's what im passionate about and it's quite sad that i haven't been focused on it as much recently."
+        "I’m also itching to tinker more with real-world tech - cracking open gadgets, poking at {{WiFi Deauthers}}, and just generally seeing how far down the rabbit hole goes.",
+        "With a bit of free time ({{and maybe a shot of courage}}), I’ll get back to learning the deeper layers of how things really work - that’s the stuff that fuels me."
       ]
     },
     {
       "content": [
-        "This entire website is also a learning experience to me, As i inspect the code and try to get an understanding of how {{JSON}} and {{JavaScript}} work.",
-        "And it is also totally not because i love {{TUI}}, And i totally didn't choose this project on porpuse because of said not-reason.",
-        "Here, You can check out some of my links. They're not related to any of my real work, However i will link my {{Github}} down below."
-      ]
-     },
-     {
-      "content": [
-        "So, As i mentioned i am a {{Gamer}} ! , So if you feel like it, Check out my <a href=\"https://steamcommunity.com/id/sudopkw/\" target=\"_blank\" class=\"text-blue\">Steam</a>.",
-        "If you'd like to add me as a friend, Or leave a comment in my steam wall, Feel free to do so.",
-        "Here's also my <a href=\"https://www.tiktok.com/@whoamipkw/\" target=\"_blank\" class=\"text-pink\">Tiktok</a>, Along with my <a href=\"https://stats.fm/pkw/\" target=\"_blank\" class=\"text-blue\">Spoti-Stats</a>, So feel free to catch up on the Music i listen to!",
-        "And finally, Here's my <a href=\"https://github.com/sudopkw/\" target=\"_blank\" class=\"text-pink\">GitHub</a>."
+        "This whole site is part of my learning sandbox - inspecting the code, reverse-engineering how {{JSON}} and {{JavaScript}} dance together.",
+        "Totally not because I’ve got a thing for {{TUI}} setups... nope, definitely not that. ;)",
+        "Anyway, here’s a few links if you’re curious - nothing serious, just a few windows into my world. My {{GitHub}}’s down there too."
       ]
     },
     {
       "content": [
-        "{{Click}} on a section on the left to learn more about my {{work}} and past {{experiences}}.",
-        "You can also {{navigate}} through the sections using the {{arrow keys}} or {{Vim motions}}."
+        "Yup, I’m a {{Gamer}} too as mentioned. Feel free to swing by my <a href=\"https://steamcommunity.com/id/sudopkw/\" target=\"_blank\" class=\"text-blue\">Steam</a> if you wanna add me or drop a comment on my wall.",
+        "You can also peek at my <a href=\"https://www.tiktok.com/@whoamipkw/\" target=\"_blank\" class=\"text-pink\">TikTok</a> or check out what I’m vibing to on <a href=\"https://stats.fm/pkw/\" target=\"_blank\" class=\"text-blue\">Spoti-Stats</a>.",
+        "And of course, my code lair - <a href=\"https://github.com/sudopkw/\" target=\"_blank\" class=\"text-pink\">GitHub</a>."
+      ]
+    },
+    {
+      "content": [
+        "{{Click}} a section on the left to dig into my {{work}} and past {{experiences}}.",
+        "Or just {{navigate}} with the {{arrow keys}} - or {{Vim motions}}, if you’re one of us. {{B)}}"
       ]
     }
   ]
